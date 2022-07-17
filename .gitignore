@@ -2,12 +2,4 @@
 /.git
 /.idea
 /.ddev
-/var
-/vendor
-!/vendor/conpassione
-/public/_assets
-/public/fileadmin
-/public/index.php
-/public/typo3
-/public/typo3temp
 composer.lock

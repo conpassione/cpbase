@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:paragraphs
+*/
+
+p, pre, blockquote {
+	margin-top: 0rem;
+	margin-bottom: $cp-lineHeight;
+	line-height: $cp-lineHeight;
+	hyphens: auto;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+strong {
+	font-weight: 700;
+}
+
+.cp-date {
+	margin: 0;
+	font-size: 0.833rem;
+	line-height: 1rem;
+	color: $cp-color--lightgray;
+}
+
+.cp-highlight {
+	color: $cp-color--highlight;
+}
+
+.cp-info {
+	background-color: $cp-color--info;
+}
+
+.cp-success {
+	background-color: transparent;
+	color: $cp-color--success;
+}
+
+.cp-error {
+	background-color: $cp-color--error;
+	//color: $cp-color--error;
+}
+
+.cp-align-left {
+	text-align: left;
+}
+
+.cp-align-center {
+	text-align: center;
+}
+
+.cp-align-right {
+	text-align: right;
+}
+
+.cp-align-justify {
+	text-align: justify;
+}
+
+.cp-fontSize--small {
+	font-size: $cp-fontSize--small;
+}
+
+.cp-fontSize--big {
+	font-size: $cp-fontSize--big;
+}
+
+blockquote {
+	text-align: center;
+	&::before {
+		color: $cp-color--highlight;
+		content: "\00201C";
+		font-size: 3.5rem;
+		font-family: $cp-fontFamily--serif;
+		vertical-align: text-bottom;
+	}
+	&::after {
+		color: $cp-color--highlight;
+		content: "\00201D";
+		font-size: 3.5rem;
+		font-family: $cp-fontFamily--serif;
+		vertical-align: text-bottom;
+	}
+	p {
+		display: inline;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+		font-style: italic;
+	}
+}

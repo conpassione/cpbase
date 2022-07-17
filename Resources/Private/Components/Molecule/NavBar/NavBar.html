@@ -1,0 +1,22 @@
+<fc:component>
+	<fc:param name="homeUid" type="string" optional="1" default="1"/>
+	<fc:param name="cp-homeTitle" type="string" optional="1" default="Home"/>
+
+	<nav class="cp-nav">
+		<ul class="cp-nav--buttonGroupe">
+			<cfc:atom.navbuttons title="Twitter" icon="twitter" link="www.twitter.com"/>
+			<cfc:atom.navbuttons title="Instagram" icon="instagram" link="www.instagram.com"/>
+			<cfc:atom.navbuttons title="Anrufen" icon="phone" link="tel:0793301011"/>
+			<cfc:atom.navbuttons title="E-Mail senden" icon="mail" link="mailto:info@conpassione.ch"/>
+
+			<li class="cp-navButton cp-navIcon--hamburger">
+				<div class="cp-hamburger" aria-expanded="false" aria-controls="menu-list" title="Menu">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</li>
+		</ul>
+	</nav>
+</fc:component>

@@ -1,0 +1,6 @@
+default:
+  alignement: "left"
+centered:
+  alignement: "center"
+right:
+  alignement: "right"

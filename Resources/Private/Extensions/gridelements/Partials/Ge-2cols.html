@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{children}">
+	<div class="cp-colContainer {f:if(condition: '{data.tx_gridelements_container} = 0', then: 'cp-colContainer--margin')}">
+		<div class="cp-col cp-col--{cp-leftCol--Width} frame frame-{data.flexform_leftCol-Frame} frame-layout-{data.flexform_leftCol-Layout}">
+			<f:for each="{children.11}" as="child">
+				<f:render partial="Child"
+					  	  arguments = "{
+					  	  	data:child.data,
+							children: child.children,
+							options: options,
+							settings: settings}"/>
+			</f:for>
+		</div>
+		<div class="cp-col cp-col--{cp-rightCol--Width} frame frame-{data.flexform_rightCol-Frame} frame-layout-{data.flexform_rightCol-Layout}">
+			<f:for each="{children.12}" as="child">
+				<f:render partial="Child"
+					  	  arguments = "{
+					  	  	data:child.data,
+							children: child.children,
+							options: options,
+							settings: settings}"/>
+			</f:for>
+		</div>
+	</div>
+</f:if>

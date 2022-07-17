@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+	<f:layout name="{cp-templateLayout}" />
+
+	Start/Landing Page Template (c) 2019 by conPassione gmbh
+
+
+	<f:section name="Main">
+		<main class="cp-main cp-wrapper--main">
+			<!--TYPO3SEARCH_begin-->
+				<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
+			<!--TYPO3SEARCH_end-->
+		</main>
+	</f:section>
+
+	<f:section name="Footer">
+		<footer class="cp-footer">
+			<div class="cp-wrapper--footer">
+			  <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '1'}" />
+			</div>
+		</footer>
+	</f:section>
+
+</html>

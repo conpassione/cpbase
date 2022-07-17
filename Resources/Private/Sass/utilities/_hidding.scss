@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:hidding
+*/
+
+[hidden],
+template {
+ 	display: none;
+}
+
+.cp-hidding {
+	border: 0;
+ 	clip: rect(0 0 0 0);
+ 	height: 1px;
+ 	margin: -1px;
+ 	overflow: hidden;
+ 	padding: 0;
+	position: absolute;
+	left: -50000px;
+	width: 1px;
+}

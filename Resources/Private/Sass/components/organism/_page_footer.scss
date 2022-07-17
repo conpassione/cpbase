@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+/*doc
+ * cp_grid:page_blocks
+*/
+
+.cp-footer {
+	flex: 0 0 0;
+	color: $cp-footer--color;
+	background-color: $cp-footerBg--color;
+	font-size: calc(0.833 * #{$cp-fontSize});
+	h1,h2,h3,h4 {
+		color: $cp-footer--color;
+	}
+}
+
+.cp-wrapper--footer {
+	padding-top: $cp-gutterWidth;
+	padding-bottom: $cp-gutterWidth;
+}

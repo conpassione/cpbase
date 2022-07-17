@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:constants.additional
+*/
+
+/* Font sizes */
+$cp-fontSize--small: 0.75rem;
+$cp-fontSize--big: 1.25rem;
+
+/* layout + template (page) */
+$cp-html--color: $cp-color;
+$cp_htmlBg--color: $cp-color--white;
+
+$cp-body--color: $cp-color;
+$cp-bodyBg--color: $cp-color--white;
+
+$cp-header--color: $cp-color--custom1;
+$cp-headerBg--color: $cp-color--white;
+$cp-footer--color: $cp-color--white;
+$cp-footerBg--color: $cp-color--custom4;
+
+
+/* heading */
+$cp-h--color: $cp-color--custom1;
+$cp-hBg--color: transparent;
+
+/* link */
+$cp-link--color: $cp-color;
+$cp-link--colorHover: $cp-color--custom2;
+
+/* border */
+$cp-border--color: $cp-color--lightgray;
+$cp-border--radius: 1rem;
+$cp-border--style: solid;
+
+/* Button primary */
+$cp-btnColor: $cp-color--lightgray;
+$cp-btnColor--hover: $cp-color--white;
+$cp-btnColorBg: $cp-color--custom2;
+$cp-btnColorBg--hover: $cp-color--custom1;
+$cp-btnBorder--width: 0px;
+$cp-btnBorder--style: solid;
+$cp-btnBorder--color: transparent;
+$cp-btnBorder--radius: 5px;
+$cp-btnBorder--colorHover: transparent;
+
+/* Button secondary */
+$cp-btnColorS: $cp-color--lightgray;
+$cp-btnColorS--hover: $cp-color--white;
+$cp-btnColorSBg: $cp-color--gray;
+$cp-btnColorSBg--hover: $cp-color--dark;
+$cp-btnBorderS--color: transparent;
+$cp-btnBorderS--colorHover: transparent;
+
+/* Button disabled */
+$cp-btnColorD: $cp-color--dark;
+$cp-btnColorD--hover: $cp-color--dark;
+$cp-btnColorDBg: $cp-color--gray;
+$cp-btnColorDBg--hover: $cp-color--gray;
+$cp-btnBorderD--color: transparent;
+$cp-btnBorderD--colorHover: transparent;
+
+/* Accordion-Button */
+$cp-btnColorAcc: $cp-color--white;
+$cp-btnColorAcc--hover: $cp-color--white;
+$cp-btnColorAccBg: $cp-color--custom4;
+$cp-btnColorAccBg--hover: $cp-color--lightgray;
+
+/* form colors */
+$cp-form--color: $cp-color--custom1;
+$cp-formBg--color : $cp-color--extralight;
+$cp-formBorder--color: $cp-color--lightgray;
+$cp-formInpunt--color: $cp-color--custom1;
+$cp-formInputBg--color: $cp-color--white;
+$cp-formInputBorder--color: $cp-color--custom1;
+
+/* navigation colors */
+/* Navigation Button */
+$cp-btnColorNav: $cp-color--custom1;
+$cp-btnColorNav--hover: $cp-color--custom1;
+$cp-btnColorNavBg: $cp-color--white;
+$cp-btnColorNavBg--hover: $cp-color--lightgray;
+$cp-btnBorderNav--width: 2px;
+$cp-btnBorderNav--style: solid;
+$cp-btnBorderNav--color: $cp-btnColorNav;
+$cp-btnBorderNav--radius: 0;
+$cp-btnBorderNav--colorHover: $cp-btnColorNav;
+
+$cp-nav--color: $cp-color--custom1;
+$cp-navBg--color:$cp-color--white;
+$cp-navBorder--color: $cp-nav--color;
+$cp-navItem--color: $cp-nav--color;
+$cp-navItemBg--color: transparent;
+$cp-navItemBorder--color: $cp-nav--color;
+$cp-navItem--colorHover: $cp-color--white;
+$cp-navItemBg--colorHover: $cp-color--lightgray;
+$cp-navItemBorder--colorHover: $cp-navItem--colorHover;
+$cp-navItem--colorActive: $cp-color--custom4;
+$cp-navItemBg--colorActive: $cp-color--extralight;
+$cp-navItemBorder--colorActive: $cp-navItem--colorActive;
+
+$cp-subNav--color: $cp-color--custom3;
+$cp-subNavBg--color: $cp-color--custom2;
+$cp-subNavBorder--color: $cp-color--white;
+$cp-subNavItem--color: $cp-nav--color;
+$cp-subNavItemBg--color: transparent;
+$cp-subNavItemBorder--color: $cp-color--custom3;
+$cp-subNavItem--colorHover: $cp-color--white;
+$cp-subNavItemBg--colorHover: transparent;
+$cp-subNavItemBorder--colorHover: $cp-color--white;
+$cp-subNavItem--colorActive: $cp-color--black;
+$cp-subNavItemBg--colorActive: transparent;
+$cp-subNavItemBorder--colorActive: $cp-color--custom1;

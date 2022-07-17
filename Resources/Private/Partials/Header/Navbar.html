@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+	<f:asset.script identifier="menuHamburger" src="EXT:cp_base/Resources/Public/JavaScript/nav.js" async="true"/>
+
+	<nav class="cp-nav">
+		<ul class="cp-nav--buttonGroupe">
+			<cfc:atom.navbuttons title="Anrufen" icon="phone" link="tel:{cp-sitePhone}"/>
+			<cfc:atom.navbuttons title="E-Mail senden" icon="mail" link="mailto:{cp-siteMail}"/>
+
+			<li class="cp-navButton cp-navIcon--hamburger">
+				<div class="cp-hamburger" aria-expanded="false" aria-controls="nav-list" title="Menu">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</li>
+		</ul>
+		<f:render partial="Header/Navlist" arguments="{cp-navMain: cp-navMain, cp-homeUid: cp-homeUid, cp-curUid: data.uid, cp-homeTitle:cp-homeTitle}"/>
+	</nav>
+</html>

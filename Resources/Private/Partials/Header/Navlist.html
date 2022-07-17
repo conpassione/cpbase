@@ -1,0 +1,16 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+	<f:if condition="{cp-navMain}">
+		<ul class="cp-nav--itemList" id="nav-list">
+			<li class="cp-nav--item {f:if(condition:'{cp-homeUid} == {cp-curUid}', then:' active')}" role="presentation">
+				<a href="/" role="menuitem" title="{cp-homeTitle}" class="cp-nav--itemLink">{cp-homeTitle}</a>
+			</li>
+			<f:for each="{cp-navMain}" as="cp-navItem">
+				<li class="cp-nav--item {f:if(condition:cp-navItem.current, then:' current')} {f:if(condition:cp-navItem.active, then:' active')}" role="presentation">
+					<a href="{cp-navItem.link}" role="menuitem" title="{cp-navItem.title}" class="cp-nav--itemLink">{cp-navItem.title}</a>
+				</li>
+			</f:for>
+		</ul>
+	</f:if>
+
+</html>

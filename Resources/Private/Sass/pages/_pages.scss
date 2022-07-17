@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:pages
+*/
+
+html {
+  background-color: $cp-htmlBg--color;
+  color: $cp-html--color;
+  font-size: $cp-fontSize;
+  line-height: $cp-lineHeight;
+  hyphens: manual;
+}
+
+body {
+	background-color: $cp-bodyBg--color;
+	color: $cp-body--color;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}

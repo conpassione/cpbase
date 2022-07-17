@@ -1,0 +1,9 @@
+<fc:component>
+	<fc:param name="title" type="string"/>
+	<fc:param name="icon" type="string" optional="1" default="Y"/>
+	<fc:param name="status" type="string" optional="1" />
+
+	<fc:renderer>
+		<button class="{component.class} {f:if(condition: status, then: 'cp-button--{status}')} "><i class="{icon}">{icon}</i> {title}</button>
+	</fc:renderer>
+</fc:component>

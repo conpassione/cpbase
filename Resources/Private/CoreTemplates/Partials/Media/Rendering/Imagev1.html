@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<img
+	src="{f:uri.image(image: file, treatIdAsReference: 1, cropVariant: 'default')}"
+	srcset="
+		{f:uri.image(image: file, treatIdAsReference: 1, maxWidth: 480, cropVariant: 'mobile')} 480w,
+		{f:uri.image(image: file, treatIdAsReference: 1, maxWidth: 780, cropVariant: 'tablet')} 780w,
+		{f:uri.image(image: file, treatIdAsReference: 1, maxWidth: 1024, cropVariant: 'tablet')} 1024w,
+		{f:uri.image(image: file, treatIdAsReference: 1, maxWidth: 1600, cropVariant: 'default')} 1600w,
+		{f:uri.image(image: file, treatIdAsReference: 1, cropVariant: 'default')} 2500w"
+	sizes="(min-width: 1600px) 2500px,
+		        (min-width: 1024px) 1600px,
+		        (min-width: 780px) 1024px,
+		        (min-width: 480px) 780px,
+		        100vw"
+    title="{file.title}"
+    alt="{file.alernative}"
+/>
+</html>

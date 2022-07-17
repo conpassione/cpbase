@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:fields
+*/
+
+%cp-input {
+	border: 1px solid $cp-colorForm--inputBorder;
+	border-radius: 0;
+	color: $cp-colorForm--input;
+	background-color: $cp-colorForm--inputBg;
+	font-size: inherit;
+	padding: $cp-padding/8 $cp-padding/4;
+	margin-bottom: $cp-padding/4;
+	&:hover,
+	&:focus {
+		background-color: darken($cp-colorForm--inputBg,20%);
+	}
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="phone"] {
+	@extend %cp-input;
+	width: 100%;
+	max-width: 100%;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+select {
+	width: auto;
+}
+
+input[type="number"] {
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+
+@supports (zoom:1.5) {
+	input[type="radio"],  input[type=checkbox]{
+		zoom: 1.5;
+		float: left;
+		margin: 2px 0 0 0;
+	}
+}
+
+@supports not (zoom:1.5) {
+	input[type="radio"],  input[type=checkbox]{
+		transform: scale(1.5);
+		margin: 10px 0 0 5px;
+		float: left;
+	}
+}

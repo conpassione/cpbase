@@ -1,0 +1,4 @@
+default:
+    title: Home
+    logo: typo3conf/ext/cp_base/Resources/Public/Images/Logo_cp_grau_slogan.png
+    rootPageLink: '123 _top'

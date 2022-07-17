@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:mixins
+*/
+
+%box-sizing {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@mixin cp-transform ($angle: 0deg) {
+	-ms-transform: rotate($angle); /* IE 9 */
+	-webkit-transform: rotate($angle); /* Safari */
+	transform: rotate($angle); /* Standard syntax */
+}
+
+@mixin cp-transform-origin ($x: 0, $y: 0) {
+	-ms-transform-origin: $x $y;
+	-webkit-transform-origin: $x $y;
+	transform-origin: $x $y;
+}
+
+@mixin cp-transition ($time: .5s, $mode: ease-in-out) {
+	-webkit-transition: $time $mode;
+	transition: $time $mode;
+}

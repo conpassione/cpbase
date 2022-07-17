@@ -1,0 +1,20 @@
+default:
+  title: E-Mail senden
+  icon: mail
+  link: mailto:info@conpassione.ch
+  styleguideComponentContext: <nav class="cp-nav"><ul class="cp-nav--buttonGroupe">|</li><li class="cp-navButton cp-navIcon--hamburger"><div class="cp-hamburger" aria-expanded="false" aria-controls="menu-list" title="Menu"><span></span><span></span><span></span><span></span></div></ul></nav>
+phone:
+  title: Telefonieren
+  icon: phone
+  link: tel:+41793301011
+  styleguideComponentContext: <nav class="cp-nav"><ul class="cp-nav--buttonGroupe">|</li><li class="cp-navButton cp-navIcon--hamburger"><div class="cp-hamburger" aria-expanded="false" aria-controls="menu-list" title="Menu"><span></span><span></span><span></span><span></span></div></ul></nav>
+twitter:
+  title: Link to twitter
+  icon: twitter
+  link: www.twitter.com
+  styleguideComponentContext: <nav class="cp-nav"><ul class="cp-nav--buttonGroupe">|</li><li class="cp-navButton cp-navIcon--hamburger"><div class="cp-hamburger" aria-expanded="false" aria-controls="menu-list" title="Menu"><span></span><span></span><span></span><span></span></div></ul></nav>
+facebook:
+  title: Auf Facebook liken
+  icon: fb
+  link: www.facebook.com
+  styleguideComponentContext: <nav class="cp-nav"><ul class="cp-nav--buttonGroupe">|</li><li class="cp-navButton cp-navIcon--hamburger"><div class="cp-hamburger" aria-expanded="false" aria-controls="menu-list" title="Menu"><span></span><span></span><span></span><span></span></div></ul></nav>

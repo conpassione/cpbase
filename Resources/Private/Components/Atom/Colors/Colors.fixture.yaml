@@ -1,0 +1,19 @@
+default:
+  colors:
+    - white
+    - extralight
+    - lightgray
+    - gray
+    - dark
+    - black
+    - -br-
+    - highlight
+    - success
+    - info
+    - error
+    - -br-
+    - color
+    - custom1
+    - custom2
+    - custom3
+    - custom4

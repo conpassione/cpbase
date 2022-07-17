@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:buttons
+*/
+
+%btn {
+	@extend %box-sizing;
+	-webkit-appearance: none;  /*apple ios*/
+	-moz-appearence: none; /*apple ios*/
+	appearance: none;
+	background-color: $cp-btnColorBg;
+	border: $cp-btnBorder--width $cp-btnBorder--style $cp-btnBorder--color;
+	border-radius: $cp-btnBorder--radius; /*apple ios*/
+	color: $cp-btnColor;
+	cursor: pointer;
+	display: inline-block;
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0.5rem 1rem;
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	&:focus,
+	&:hover {
+		background-color: $cp-btnColorBg--hover;
+		color: $cp-btnColor--hover;
+		border-color: $cp-btnBorder--colorHover;
+		text-decoration: none;
+	}
+}
+
+input[type="submit"],
+button,
+.button {
+	@extend %btn;
+}
+
+.cp-button--secondary {
+	background-color: $cp-btnColorSBg;
+	color: $cp-btnColorS;
+	border-color: $cp-btnBorderS--color;
+	&:focus,
+	&:hover {
+		background-color: $cp-btnColorSBg--hover;
+		color: $cp-btnColorS--hover;
+		border-color: $cp-btnBorderS--colorHover;
+	}
+}
+
+.cp-button--inactive {
+	background-color: $cp-btnColorDBg;
+	color: $cp-btnColorD;
+	border-color: $cp-btnBorderD--color;
+	&:focus,
+	&:hover {
+		background-color: $cp-btnColorDBg--hover;
+		color: $cp-btnColorD--hover;
+		border-color: $cp-btnBorderD--colorHover;
+	}
+}

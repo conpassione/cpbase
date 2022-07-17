@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:links
+*/
+
+/* Normalize Links
+   ========================================================================== */
+a {
+	color: inherit;
+	background-color: inherit;
+	text-decoration: none;
+	&:active,
+	&:hover {
+		outline: 0;
+	}
+}
+
+p {
+	a:hover {
+		text-decoration-line: underline;
+		text-decoration-color: $cp-link--colorHover;
+		text-decoration-style: dotted;
+	}
+}
+
+%link {
+	text-decoration: none;
+	font-family: inherit;
+	font-size: inherit;
+	&:hover {
+		text-decoration-line: underline;
+		text-decoration-color: $cp-link--colorHover;
+		text-decoration-style: dotted;
+	}
+}
+
+%linkbefore {
+	@extend %link;
+	&:before {
+		color: inherit;
+		@extend %cp-symbol;
+		font-size: 110%;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+%linkafter {
+	@extend %link;
+	&:after {
+		color: inherit;
+		@extend %cp-symbol;
+		font-size: 110%;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+.cp-link--internal,
+.cp-link--external,
+.cp-link--button,
+.cp-link--fon,
+.cp-link--mail,
+.cp-link--fb,
+.cp-link--twitter,
+.cp-link--insta,
+.cp-link--download {
+	@extend %link;
+}
+
+.cp-link--iinternal,
+.cp-link--iexternal,
+.cp-link--ibutton,
+.cp-link--ifon,
+.cp-link--imail,
+.cp-link--ifb,
+.cp-link--itwitter,
+.cp-link--iinsta,
+.cp-link--idownload {
+	@extend %linkbefore;
+}
+
+.cp-link--iinternal {
+	&:before {
+		content: "right\20";
+	}
+}
+
+.cp-link--iexternal {
+	&:before {
+		content: "external\20";
+	}
+}
+
+.cp-link--ibutton {
+	&:before {
+		content: "right\20";
+	}
+}
+
+.cp-link--ifon {
+	&:before {
+		content: "phone\20";
+	}
+}
+
+.cp-link--imail {
+	&:before {
+		content: "mail\20";
+	}
+}
+
+.cp-link--ifb {
+	&:before {
+		content: "facebook\20";
+	}
+}
+
+.cp-link--itwitter {
+	&:before {
+		content: "twitter\20";
+	}
+}
+
+.cp-link--iinsta {
+	&:before {
+		content: "instagram\20";
+	}
+}
+
+.cp-link--idownload {
+	&:before {
+		content: "download\20";
+	}
+}
+
+.headline-anchor {
+	@extend %link;
+	color: $cp-color--lightgray;
+	font-family: $cp-fontFamily--symbol;
+}

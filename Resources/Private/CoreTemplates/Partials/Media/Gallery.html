@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{gallery}">
+	<div class="cp-gallery cp-imageCols--{data.imagecols} ce-gallery--{gallery.position.horizontal}" style="max-width: {f:if(condition: '{data.imagewidth} !== 0', then: '{data.imagewidth}px;', else: 'none')};" >
+		<f:for each="{gallery.rows}" as="row">
+			<f:for each="{row.columns}" as="gfile">
+				<f:if condition="{gfile.media}">
+					<f:variable name="rw" value="{gfile.dimensions.width}"/>
+					<f:variable name="rh" value="{gfile.dimensions.height}"/>
+					<div class="cp-vp--{gallery.position.vertical}-{gallery.position.horizontal} cp-imgOrientation {f:if(condition: '{rh / rw} > 1.1', then: 'cp-imgOrientation--portrait')}{f:if(condition: '{rh / rw} < 0.9', then: ' cp-imgOrientation--landscape')}">
+						<f:render partial="Media/Type" arguments="{file: gfile.media, dimensions: gfile.dimensions , data: data, settings: settings}" />
+					</div>
+				</f:if>
+			</f:for>
+		</f:for>
+	</div>
+</f:if>
+</html>

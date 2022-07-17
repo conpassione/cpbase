@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+Gridelements Accordion-Container Template by conPassione gmbh
+
+<f:section name="Main">
+<f:flashMessages />
+
+<f:if condition="{children}">
+	<f:asset.script identifier="accordion" src="EXT:cp_base/Resources/Public/JavaScript/accs.js"/>
+	<div class="cp-accordion-container">
+		<f:for each="{children.21}" as="child" iteration="intIt">
+			<f:variable name="fAO" value="0"/>
+			<f:if condition="{data.flexform_firstAccOpen} == {intIt.cycle}">
+				<f:variable name="fAO" value="1"/>
+			</f:if>
+			<f:render partial="Ge-accordion"
+					  	  arguments = "{
+					  	    firstAccOpen: fAO,
+					  	  	data:child.data,
+							children: child.children,
+							options: options,
+							settings: settings}"/>
+		</f:for>
+	</div>
+</f:if>
+
+</f:section>

@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:lists
+*/
+
+.frame-type-text,
+.body-text {
+ 	ul {
+		li {
+			padding-left: 1.5rem;
+			margin-left: 0px;
+			position: relative;
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				top:0.45rem;
+				left:0.03rem;
+				width:0.5rem;
+				height: 0.5rem;
+				background-color: $cp-color--highlight;
+			}
+		}
+ 	}
+ 	ol {
+ 		counter-reset: cp-counter;
+ 		li {
+	 		padding-left: 1.5rem;
+	 		margin-left: 0;
+	 		position: relative;
+	 		&:before {
+	 			position:absolute;
+	 			content: counter(cp-counter) ".";
+	 			counter-increment: cp-counter;
+				color: inherit;
+				font-size: inherit;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				width: 1.8rem;
+	 		}
+ 		}
+ 	}
+
+}
+
+/* flie-list (uploads) */
+.ce-uploads-filesize {
+	font-size: 0.8rem;
+}

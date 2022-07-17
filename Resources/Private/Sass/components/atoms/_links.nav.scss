@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:links.nav
+*/
+
+.cp-nav--itemLink {
+	font-family: $cp-fontFamily--nav;
+	font-size: $cp-fontSize--nav;
+	display: block;
+	line-height: $cp-lineHeight;
+	padding: 0.5rem;
+}

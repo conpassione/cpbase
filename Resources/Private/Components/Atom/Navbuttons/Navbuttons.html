@@ -1,0 +1,11 @@
+<fc:component>
+	<fc:param name="title" type="string" default="E-Mail senden"/>
+	<fc:param name="icon" type="string" default="mail"/>
+	<fc:param name="link" type="string" default="#"/>
+
+	<fc:renderer>
+		<li class="cp-navButton cp-navIcon--{icon}">
+			<a href="{link}" title="{title}" alt="{title}">{icon}</a>
+		</li>
+	</fc:renderer>
+</fc:component>

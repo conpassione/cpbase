@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:fonts
+*/
+
+/* fonts */
+//@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400,wght@700&family=Public+Sans:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+@font-face {
+  font-family: "LigatureSymbols";
+  src: url("../Fonts/LigatureSymbols/LigatureSymbols-2.11.eot");
+  src: url("../Fonts/LigatureSymbols/LigatureSymbols-2.11.eot?#iefix") format("embedded-opentype"),
+       url("../Fonts/LigatureSymbols/LigatureSymbols-2.11.woff") format("woff"),
+       url("../Fonts/LigatureSymbols/LigatureSymbols-2.11.ttf") format("truetype"),
+       url("../Fonts/LigatureSymbols/LigatureSymbols-2.11.svg#LigatureSymbols") format("svg");
+  src: url("../Fonts/LigatureSymbols/LigatureSymbols-2.11.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$cp-fontFamily: "Ubuntu", sans-serif;
+$cp-fontFamily--serif: "Ubuntu", serif;
+$cp-fontFamily--h: "Ubuntu", sans-serif;
+$cp-fontFamily--nav: $cp-fontFamily;
+$cp-fontFamily--mono: "Ubuntu", sans-serif;
+$cp-fontFamily--symbol: "LigatureSymbols";
+
+* {
+	text-rendering: optimizeLegibility;
+}
+
+%cp-symbol {
+	font-family: $cp-fontFamily--symbol;
+	-webkit-text-rendering: optimizeLegibility;
+	-moz-text-rendering: optimizeLegibility;
+	-ms-text-rendering: optimizeLegibility;
+	-o-text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-webkit-font-feature-settings: "liga" 1, "dlig" 1;
+	-moz-font-feature-settings: "liga" 1, "dlig" 1;
+	-ms-font-feature-settings: "liga" 1, "dlig" 1;
+	-o-font-feature-settings: "liga" 1, "dlig" 1;
+	font-feature-settings: "liga" 1, "dlig" 1;
+}

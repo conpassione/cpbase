@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+/*doc
+ * cp_grid:page_blocks
+*/
+
+.cp-wrapper,
+.cp-wrapper--header,
+.cp-wrapper--nav,
+.cp-wrapper--footer {
+	background-color: inherit;
+	margin: 0 auto;
+	max-width: $cp-media--xl;
+	padding: 0 $cp-gutterWidth;
+	width: 100%;
+}
+
+.cp-wrapper--main {
+	>.cp-width--normal {
+		margin: $cp-gutterWidth auto;
+		max-width: $cp-media--xl;
+		padding: 0 $cp-gutterWidth;
+		width: 100%;
+		&:last-of-type {
+			padding-bottom: $cp-gutterWidth;
+		}
+		&.frame-type-header {
+			margin: 0 auto;
+		}
+	}
+	>.cp-width--viewportwidth {
+		padding: 0;
+		width: 100%;
+		max-width: 100vw;
+		>header,
+		>p,
+		>.ce-textpic,
+		>.ce-textmedia,
+		>.bodytext,
+		>.cp-colContainer {
+			padding-left: $cp-gutterWidth;
+			padding-right: $cp-gutterWidth;
+		}
+	}
+	>.cp-width--small {
+		margin: 0 auto;
+		max-width: $cp-media--m;
+		width: 100%;
+	}
+}

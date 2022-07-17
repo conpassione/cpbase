@@ -1,0 +1,36 @@
+<fc:component>
+	<fc:param name="ptype" type="string" default="P"/>
+
+	<fc:renderer>
+	<div class="body-text">
+		<f:switch expression="{ptype}">
+			<f:case value="ul">
+				<p>Das ist ein normaler Text, den man hier einsetzen kann ohne dass was besonderes daran wäre.</p>
+				<ul>
+					<li>Eintrag 1</li>
+					<li>Eintrag 2</li>
+					<li>Eintrag 3</li>
+				</ul>
+				<p>Das ist ein normaler Text, den man hier einsetzen kann ohne dass was besonderes daran wäre.</p>
+			</f:case>
+			<f:case value="ol">
+				<p>Das ist ein normaler Text, den man hier einsetzen kann ohne dass was besonderes daran wäre.</p>
+				<ol>
+					<li>Eintrag 1</li>
+					<li>Eintrag 2</li>
+					<li>Eintrag 3</li>
+				</ol>
+				<p>Das ist ein normaler Text, den man hier einsetzen kann ohne dass was besonderes daran wäre.</p>
+			</f:case>
+			<f:case value="blockquote">
+				<p>Das ist ein normaler Text, den man hier einsetzen kann ohne dass was besonderes daran wäre.</p>
+				<blockquote>Man kann auch ohne Hunde leben, aber es lohnt sich nicht.</blockquote>
+				<p>Das ist ein normaler Text, den man hier einsetzen kann ohne dass was besonderes daran wäre.</p>
+			</f:case>
+			<f:defaultCase>
+				<p>Das ist ein normaler Text, den man hier einsetzen kann ohne dass was besonderes daran wäre.</p>
+			</f:defaultCase>
+		</f:switch>
+	</div>
+	</fc:renderer>
+</fc:component>

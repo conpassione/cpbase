@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+/*doc
+ * cp_grid:stripes and frames
+*/
+.frame {
+	overflow: hidden;
+	hyphens: auto;
+}
+
+.frame-default {
+	//background-color: inherit;
+}
+
+.frame-framed {
+	border: 1px solid $cp-border--color;
+	padding: $cp-gutterWidth;
+}
+
+.frame-framed--rounded {
+	border: 1px solid $cp-border--color;
+	border-radius: $cp-border--radius;
+	padding: $cp-gutterWidth;
+}
+
+.frame-white--shadowed,
+.frame-white {
+	background-color: $cp-color--white;
+	padding: $cp-gutterWidth;
+}
+
+.frame-white--shadowed {
+	border: 1px solid $cp-color--extralight;
+	box-shadow: 3px 3px 5px $cp-color--gray;
+}
+
+.frame-lightgray {
+	background-color: $cp-color--lightgray;
+	padding: $cp-gutterWidth;
+}
+
+.frame-dark {
+	color: $cp-color--white;
+	background-color: $cp-color--dark;
+	padding: $cp-gutterWidth;
+}
+
+.frame-custom1 {
+	background-color: $cp-color--custom1;
+	padding: $cp-gutterWidth;
+}
+
+.frame-custom2 {
+	background-color: $cp-color--custom2;
+	padding: $cp-gutterWidth;
+}
+
+.frame-custom3 {
+	background-color: $cp-color--custom3;
+	padding: $cp-gutterWidth;
+}
+
+// Standard Schriftfarb
+.frame-layout-0 {
+	color: inherit;
+}
+
+// Border bottom
+.frame-layout-1 {
+	>header {
+		border-bottom: 4px dotted $cp-color--custom1;
+	}
+}
+
+// Border top and bottom
+.frame-layout-2 {
+	>header {
+		border-top: 4px dotted $cp-color--custom1;
+		border-bottom: 4px dotted $cp-color--custom1;
+	}
+}
+
+// Border top
+.frame-layout-3 {
+	>header {
+		border-top: 4px dotted $cp-color--custom1;
+	}
+}
+
+.frame-type-header {
+	h1,h2,h3 {
+		margin-bottom: 0;
+	}
+}

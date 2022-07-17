@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:slider
+*/
+
+.cp-slider {
+	position:relative;
+}
+
+.cp-sliderContainer {
+	&.cp-hasBg {
+		position:absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		margin: 0 auto;
+		max-width: $cp-media--xl;
+	}
+}
+
+.bx-wrapper {
+	position: relative;
+	*zoom: 1;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+}
+
+.bx-viewport {
+	background: $cp-color--white;
+}
+
+.cp-sliderSlides {
+	.ce-image,
+	.ce-textpic,
+	.ce-textmedia {
+		.cp-gallery {
+			padding-bottom: 0;
+		}
+	}
+}
+
+/* LOADING */
+.bx-wrapper .bx-loading {
+	background: url('../Images/bx_loader.gif') center center no-repeat $cp-color--white;
+	height: 100%;
+	width: 100%;
+	min-height: 50px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 60;
+}
+
+/* PAGER */
+.bx-wrapper .bx-pager {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding-bottom: 10px;
+	z-index: 70;
+	&.bx-default-pager {
+		display: flex;
+		justify-content: center;
+		.bx-pager-item {
+			font-size: 0;
+			line-height: 0;
+			flex: 0 0 10;
+		}
+		a {
+		  background: $cp-color--lightgray;
+		  text-indent: -9999px;
+		  display: block;
+		  width: 10px;
+		  height: 10px;
+		  margin: 0 10px;
+		  outline: 0;
+		  border-radius: 0;
+		  &:hover {
+		  	background: $cp-color--custom2;
+		  }
+		  &.active,
+		  &:focus {
+		  	background: $cp-color--custom4;
+		  }
+		}
+	}
+}
+.bx-controls.bx-has-pager {
+	margin-bottom: -3px;
+}
+
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+.bx-wrapper .bx-controls-direction a {
+	z-index: 70;
+}
+
+.bx-wrapper .bx-controls-direction {
+	position: absolute;
+	top: 50%;
+	margin-top: -16px;
+	outline: 0;
+	width: 100%;
+	height: 32px;
+	text-indent: -9999px;
+	z-index: 70;
+	display: flex;
+	justify-content: space-between;
+
+	.bx-prev {
+		margin-left: 1rem;
+		flex: 0 0 32px;
+		background: url('../Images/bx_controls.png') no-repeat 0 -32px;
+		&:hover,
+		&:focus {
+			background-position: 0 0;
+		}
+	}
+
+	.bx-next {
+		margin-right: 1rem;
+		flex: 0 0 32px;
+		background: url('../Images/bx_controls.png') no-repeat -43px -32px;
+		&:hover,
+		&:focus {
+			background-position: -43px 0;
+		}
+	}
+}

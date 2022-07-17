@@ -1,0 +1,15 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+	<header class="cp-header">
+		<div class="cp-wrapper--header">
+			<cfc:atom.logo logo="{cp-logo}" title="{cp-siteHeadline}" rootPageLink="{cp-homeUid} _top" logoAltText="{cp-logoAltText}"/>
+			<div class="cp-header--nav">
+				<f:render partial="Header/Navbar" arguments="{_all}"/>
+				<div class="cp-headerTitleAdress">
+					<h1>{cp-siteHeadline}</h1>
+				</div>
+			</div>
+		</div>
+	</header>
+
+</html>

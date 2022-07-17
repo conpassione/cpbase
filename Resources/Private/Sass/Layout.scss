@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/*doc
+---
+title: Layout
+name: layout
+category: Utilities
+---
+
+Central Style Sheet
+this is the only one included into the HTML-Code
+
+*/
+
+
+/* import utilities */
+@import
+	'fonts',
+	'constants.base',
+	"./utilities/mixins",
+	"./utilities/normalize",
+	"./utilities/clearfix",
+	"./utilities/hidding",
+	"constants.additional";
+
+/* import atoms (core styles) */
+@import
+ 	"./components/atoms/paragraphs",
+ 	"./components/atoms/headings",
+ 	"./components/atoms/links",
+ 	"./components/atoms/links.nav",
+	"./components/atoms/lists",
+// 	"./components/atoms/fields",
+	"./components/atoms/buttons",
+	"./components/atoms/buttons.nav",
+ 	"./components/atoms/images",
+ 	"./components/atoms/logo";
+
+/* import molecules (component styles) */
+@import
+// 	"./components/molecules/forms",
+ 	"./components/molecules/frames",
+ 	"./components/molecules/structures.cols",
+ 	"./components/molecules/structures.gallery",
+ 	"./components/molecules/structures.grids",
+ 	"./components/molecules/structures.accordions",
+// 	"./components/molecules/tables";
+ 	"./components/molecules/navh";
+
+/* import organismn (page styles) */
+ @import
+ 	"./components/organism/page_blocks",
+ 	"./components/organism/page_header",
+ 	"./components/organism/page_main",
+ 	"./components/organism/page_footer",
+ 	"./components/organism/slider";
+ 	//"./components/organism/slider_bx";
+
+/* import pages */
+ @import
+ 	"pages/pages" ;

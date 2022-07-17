@@ -1,0 +1,12 @@
+<fc:component>
+	<fc:param name="logo" type="string" />
+	<fc:param name="title" type="string" optional="1" default="home" />
+	<fc:param name="rootPageLink" type="SMS\FluidComponents\Domain\Model\Typolink" />
+	<fc:param name="logoAltText" type="string" optional="1" default="Zurück zur Startseite" />
+
+	<fc:renderer>
+		<div class="cp-logo">
+			<a href="{rootPageLink.uri}" target="{rootPageLink.target}"><img src="{logo}" alt="{logoAltText}" title="{title}"></a>
+		</div>
+	</fc:renderer>
+</fc:component>

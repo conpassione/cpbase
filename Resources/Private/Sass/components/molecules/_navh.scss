@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:menu_main
+*/
+
+.cp-nav {
+	overflow: visible;
+	position: relative;
+	z-index: 200;
+	flex: 0 0 0;
+	padding-top: $cp-gutterWidth/2;
+}
+
+.cp-nav--buttonGroupe {
+	display: block;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	margin: 0;
+}
+
+.cp-nav--item {
+	background-color: $cp-navItemBg--color;
+	color: $cp-navItem--color;
+	white-space: nowrap;
+	//cursor: pointer;
+	//margin-left: $cp-gutterWidth;
+	border-left: 1px solid $cp-navItemBorder--color;
+	&:last-of-type {
+		border-right: 1px solid $cp-navItemBorder--color;
+	}
+	position: relative;
+	&.active {
+		background-color: $cp-navItemBg--colorActive;
+		border-color: $cp-navItemBorder--colorActive;
+		color: $cp-navItem--colorActive;
+	}
+	&:hover {
+		background-color: $cp-navItemBg--colorHover;
+		border-color: $cp-navItemBorder--colorHover;
+		color: $cp-navItem--colorHover;
+	}
+}
+
+.cp-nav--itemList {
+	display: none;
+	justify-content: flex-end;
+	margin: 0;
+	z-index: 210;
+}
+
+ul.cp-nav--itemList.cp-nav--itemListOpen {
+	background-color: rgba($cp-navBg--color, 0.95);
+	display: block;
+	max-height: calc(100vh - 90px);
+	overflow-y: scroll;
+	padding: $cp-gutterWidth/2;
+	position: absolute;
+	right: 0px;
+	top: 100%;
+	box-shadow: 3px 3px 5px $cp-nav--color;
+	>.cp-nav--item {
+		margin: 0;
+		border: none;
+		border-top: 1px dotted $cp-navItemBorder--color;
+		border-left: $cp-btnBorderNav--width solid transparent;
+		&:last-of-type {
+			border-bottom: 1px dotted $cp-navItemBorder--color;
+		}
+		&.active {
+			color: $cp-navItem--colorActive;
+			//background-color: rgba( $cp-color--white, 0.4);
+			background-color: $cp-navItemBg--colorActive;
+			border-bottom: none;
+			border-left: $cp-btnBorderNav--width solid $cp-navItemBorder--color;
+			&:before {
+				content: "";
+			}
+		}
+		&:hover {
+			&:before {
+				content: "";
+			}
+		}
+		>.cp-nav--itemLink {
+			padding: $cp-gutterWidth;
+			font-size: 1.1*$cp-fontSize--nav;
+			&:hover {
+				transform: none;
+				color: inherit;
+				background-color: inherit;
+			}
+		}
+	}
+}
+
+
+@media (min-width: $cp-media--nb) {
+	.cp-nav--buttonGroupe {
+		display: none;
+	}
+	.cp-nav--mobile {
+		flex: 1 0 100%;
+	}
+	.cp-nav--mobileIcon {
+		display: none;
+	}
+	.cp-nav--itemList {
+		display: inline-block;
+		display: flex;
+	}
+	.cp-nav--item {
+		flex: 0 0 0;
+	}
+}
+

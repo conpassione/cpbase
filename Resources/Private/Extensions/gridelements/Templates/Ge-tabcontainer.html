@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+Gridelements Tab-Container Template by conPassione gmbh
+
+<f:section name="Main">
+<f:flashMessages />
+
+<div class="cp-tab-container jquery_tabs frame frame-{data.frame_class} frame-layout-{data.layout} {f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+	<f:format.raw>{data.tx_gridelements_view_column_21}</f:format.raw>
+</div>
+
+</f:section>

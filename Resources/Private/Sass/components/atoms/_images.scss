@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:images
+*/
+
+.ce-gallery figure {
+	margin-bottom: 0;
+}
+
+figure {
+	position: relative;
+}
+
+figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0 5px;
+	font-size: 10px;
+	line-height: 12px;
+	background-color: rgba($cp-color--white, 0.6);
+}

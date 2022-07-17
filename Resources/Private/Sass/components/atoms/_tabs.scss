@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:tabs
+*/
+
+.jquery_tabs {
+	.tabhead,
+	.current-info,
+	.accessibletabsanchor {
+		position:absolute;
+		left:-999em;
+	}
+	.tabcontent {
+		z-index: -1;
+	}
+
+	ul.tabs-list {
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		li {
+			flex: 0 0 100px;
+			border: 1px solid green;
+			text-align: center;
+			margin-right: $cp-padding/2;
+			margin-bottom: $cp-padding/2;
+			min-height: 4rem;
+			a {
+				display:block;
+				padding: $cp-padding/2;
+				font-weight: bold;
+			}
+			&.current,
+			&:hover {
+				background-color: $cp-color--extralight;
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+default:
+  title: Aktiver Knopf
+secondary:
+  title: Passiver Knopf
+  icon: X
+  status: secondary
+inactive:
+  title: Inaktiver Knopf
+  status: inactive

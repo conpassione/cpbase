@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:ck-editor
+*/
+html {
+	background: white;
+}
+
+body.cke_editable {
+	padding: 10px;
+	>*:last-child{
+		border-bottom: 3px dotted lightgray;
+	}
+ 	ul {
+		li {
+			padding-left: 1.5rem;
+			margin-left: 0;
+			position: relative;
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				top:0.45rem;
+				left:0.03rem;
+				width:0.5rem;
+				height: 0.5rem;
+				background-color: $cp-color--custom1;
+			}
+		}
+ 	}
+ 	ol {
+ 		counter-reset: cp-counter;
+ 		li {
+	 		padding-left: 1.5rem;
+	 		margin-left: 0;
+	 		position: relative;
+	 		&:before {
+	 			position:absolute;
+	 			content: counter(cp-counter) ".";
+	 			counter-increment: cp-counter;
+				color: inherit;
+				font-size: inherit;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				width: 1.5rem;
+	 		}
+ 		}
+ 	}
+}
+
+/* special classes to adjust RTE-Editor */
+.htmlarea-content-body {
+	background: #ffffff;
+}
+
+ul.cke_panel_list {
+	li.cke_panel_listItem {
+		a, b, i, strong, span {
+			line-height: 1rem !important;
+			padding: 3px 5px;
+		}
+	}
+}

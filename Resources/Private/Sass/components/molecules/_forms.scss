@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:forms
+*/
+
+div.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-flow: wrap;
+}
+
+div.column {
+	flex: 1 1 0;
+}
+
+div.col-sm-4 {
+	flex: 0 0  80px;
+	margin-right: $cp-whiteSpace/2;
+}
+
+div.col-lg-1,
+div.col-lg-2,
+div.col-lg-4,
+div.col-lg-8,
+div.col-lg-3,
+div.col-lg-6,
+div.col-lg-9,
+div.col-lg-12 {
+	-webkit-flex-basis: 100%;
+	flex-basis: 100%;
+}
+
+.col-h {
+	padding: $cp-padding/2;
+}
+
+@media (min-width: $cp-media--small) {
+	div.col-lg-2 {
+		flex-basis: calc(50% - #{$cp-whiteSpace}*0.5);
+	}
+	div.col-lg-4 {
+		flex-basis: calc(25% - #{$cp-whiteSpace}*0.75);
+	}
+	div.col-lg-8 {
+		flex-basis: calc(12.5% - #{$cp-whiteSpace}*0.875);
+	}
+	div.col-lg-3 {
+		flex-basis: calc(33.333% - #{$cp-whiteSpace}*0.667);
+	}
+	div.col-lg-6 {
+		flex-basis: calc(16.667% - #{$cp-whiteSpace}*0.833);
+	}
+	div.col-lg-9 {
+		flex-basis: calc(11.111% - #{$cp-whiteSpace}*0.889);
+	}	div.col-lg-12 {
+		flex-basis: calc(8.333% - #{$cp-whiteSpace}*0.917);
+	}
+}
+

@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:logo
+*/
+
+.cp-logo {
+	flex: 0 1 350px;
+	min-width: 65px;
+	max-width: 350px;
+	padding-right: 1rem;
+	position: relative;
+	z-index: 130;
+}

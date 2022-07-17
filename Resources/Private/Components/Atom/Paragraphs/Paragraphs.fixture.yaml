@@ -1,0 +1,8 @@
+default:
+  ptype: P
+unorderedlist:
+  ptype: ul
+orderedlist:
+  ptype: ol
+quote:
+  ptype: blockquote

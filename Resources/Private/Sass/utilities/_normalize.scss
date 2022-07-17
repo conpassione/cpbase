@@ -1,0 +1,209 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:normalize
+*/
+
+html {
+	@extend %box-sizing;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: auto;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: block;
+	font-family: $cp-fontFamily;
+	font-size: $cp-fontSize;
+	font-weight: normal;
+	line-height: $cp-lineHeight;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	@extend %box-sizing;
+	display: block;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow-y: scroll;
+	position: relative;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary,
+div {
+	@extend %box-sizing;
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+input,
+select,
+textarea {
+	@extend %box-sizing;
+	padding: 0;
+	margin: 0;
+	font-family: $cp-fontFamily;
+	font-size: $cp-fontSize;
+	color: inherit;
+	border: 0;
+}
+
+blockquote,
+form,
+fieldset {
+	@extend %box-sizing;
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ * 3. Normalize width of `audio` in Chrome
+ */
+
+canvas,
+progress,
+video {
+	display: inline-block; /* 1 */
+	vertical-align: baseline; /* 2 */
+	min-width: 192px; /* 3 */
+	max-width: 100%;
+}
+
+audio {
+	display: inline-block; /* 1 */
+	vertical-align: baseline; /* 2 */
+	max-width: 250px; /* 3 */
+	max-height: 40px;
+}
+
+hr {
+	border: 1px solid $cp-color--extralight;
+	margin: -1px 0;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+/*
+ * Images
+ */
+img {
+	border: 0;
+	width: 100%;
+	height: auto;
+	display: inline;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+
+svg {
+	margin: 0;
+	padding: 0;
+	&:not(:root) {
+		overflow: hidden;
+	}
+}
+path {
+	margin: 0;
+	padding: 0;
+}
+
+/**
+ * Correct list styles
+ */
+ol, ul {
+	list-style: none;
+	margin: 0;
+	margin-bottom: 1rem;
+	padding: 0;
+}
+li {
+	margin: 0;
+	padding: 0;
+}
+
+/**
+ * additional styles
+ */
+strong {
+	font-weight: bold;
+}
+
+a, b, i, strong, em, small, code {
+	line-height: 0;
+}
+
+sub, sup {
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+
+/**
+ * CSS Additions for Responsive Media
+ * div ce-media
+ * div ce-responsive-video
+ * iframe
+ */
+
+figure.video {
+	width: 100%;
+}
+
+div.video-embed {
+	position: relative;
+	padding-bottom: calc(56.25%);
+	width: 100%;
+}
+
+iframe.video-embed-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+

@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:constants
+*/
+
+/* Baseline Colors */
+$cp-color--black: #000000;
+$cp-color--dark: #333333;
+$cp-color--gray: #666666;
+$cp-color--lightgray: #cccccc;
+$cp-color--extralight: #ececec;
+$cp-color--white: #ffffff;
+$cp-color--success: #c3f6a6;
+$cp-color--info: #a3bae7;
+$cp-color--error: #f3a8bb;
+
+$cp-color: #343f3a;
+$cp-color--custom1: #809483;
+$cp-color--custom2: #824493;
+$cp-color--custom3: #BA7DFF;
+$cp-color--custom4: #416A7F;
+$cp-color--highlight: $cp-color--custom4;
+
+/* media brakepoints */
+$cp-media--xxl: 2500px;
+$cp-media--xl: 1400px;
+$cp-media--l: 1024px;
+$cp-media--m: 750px;
+$cp-media--s: 480px;
+$cp-media--nb: 750px;
+
+/* Baseline */
+// fontSize: min 18px max 24px (+6px);
+$cp-fontSize: calc(min(20px, 14px + max(0px,((100vw - 480px) * 6 / (1400 - 480)))));
+$cp-scaleFactor: 1.15;  //siehe https://www.gridlover.net/try;
+@media (min-width: $cp-media--l) {
+	$cp-scaleFactor: 1.25;
+}
+
+$cp-lineHeight: 1.25rem;
+
+$cp-fontSize--h: 1rem;
+$cp-fontSize--nav: 0.833rem;
+$cp-lineHeight--nav: 1.25rem;
+$cp-gutterWidth: 1.5rem;
+
+/* as css constants */
+:root {
+	--white: #{$cp-color--white};
+	--extralight: #{$cp-color--extralight};
+	--lightgray: #{$cp-color--lightgray};
+	--gray: #{$cp-color--gray};
+	--dark: #{$cp-color--dark};
+	--black: #{$cp-color--black};
+	--success: #{$cp-color--success};
+	--info: #{$cp-color--info};
+	--error: #{$cp-color--error};
+	--color: #{$cp-color};
+	--custom1: #{$cp-color--custom1};
+	--custom2: #{$cp-color--custom2};
+	--custom3: #{$cp-color--custom3};
+	--custom4: #{$cp-color--custom4};
+	--highlight: #{$cp-color--highlight};
+}

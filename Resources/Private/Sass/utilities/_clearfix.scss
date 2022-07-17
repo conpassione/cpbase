@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:clearfix
+*/
+
+.cp-clearfix {
+	&:after {
+		clear: both;
+		content: "";
+		display: table;
+	}
+}

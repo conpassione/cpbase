@@ -1,0 +1,56 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This is the Template for gridelements
+
+<f:section name="Main">
+<f:flashMessages />
+
+<f:asset.script identifier="bxSliderCustomVar" priority="true">
+var cp_bxSliderConfig = [];
+</f:asset.script>
+<f:asset.script identifier="bxSlider" src="EXT:cp_base/Resources/Public/JavaScript/bxslider/jquery.bxslider.min.js"/>
+<f:asset.script identifier="bxSliderCustomJS" src="EXT:cp_base/Resources/Public/JavaScript/slider.js"/>
+
+<div class="cp-slider wrap-Slider-{data.uid}">
+	<f:if condition="{data.flexform_backgroundImage}">
+		<f:then>
+			<div class="cp-sliderBackgroundImage">
+				<f:render partial="../../CoreTemplates/Partials/Media/Gallery" arguments="{_all}" />
+			</div>
+		</f:then>
+	</f:if>
+	<f:if condition="{data.flexform_backgroundImage}">
+		<f:then><div class="cp-sliderContainer cp-hasBg"></f:then>
+		<f:else><div class="cp-sliderContainer"></f:else>
+	</f:if>
+
+		<script type="text/javascript">
+		cp_bxSliderConfig.push( {
+			sliderName: 'Slider-{data.uid}',
+			mode: <f:if condition="{data.flexform_mode}"><f:then>'{data.flexform_mode}'</f:then><f:else>'fade'</f:else></f:if>,
+			speed: <f:if condition="{data.flexform_speed} > 0"><f:then>{data.flexform_speed}</f:then><f:else>1000</f:else></f:if>,
+			easing: <f:if condition="{data.flexform_easing}"><f:then>'{data.flexform_easing}'</f:then><f:else>'ease-in-out'</f:else></f:if>,
+			pager: <f:if condition="{data.flexform_showPager}"><f:then>true</f:then><f:else>false</f:else></f:if>,
+			controls: <f:if condition="{data.flexform_showControls}"><f:then>true</f:then><f:else>false</f:else></f:if>,
+			pause: <f:if condition="{data.flexform_pause} > 0"><f:then>{data.flexform_pause}</f:then><f:else>2000</f:else></f:if>,
+			autoDelay: <f:if condition="{data.flexform_autoDelay} > 0"><f:then>{data.flexform_autoDelay}</f:then><f:else>500</f:else></f:if>,
+			minSlides: <f:if condition="{data.flexform_minSlides} > 1"><f:then>{data.flexform_minSlides}</f:then><f:else>1</f:else></f:if>,
+			maxSlides: <f:if condition="{data.flexform_maxSlides} > 1"><f:then>{data.flexform_maxSlides}</f:then><f:else>1</f:else></f:if>,
+		});
+		</script>
+
+		<div class="cp-sliderSlides Slider-{data.uid}">
+			<f:for each="{children.31}" as="child">
+				<f:render partial="Child"
+					  	  arguments = "{
+					  	  	data:child.data,
+							children: child.children,
+							options: child.options,
+							settings: child.settings}"/>
+			</f:for>
+		</div>
+	</div>
+</div>
+
+</f:section>

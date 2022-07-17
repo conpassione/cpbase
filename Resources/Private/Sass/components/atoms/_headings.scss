@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/*doc
+ * cp_base:headings
+*/
+
+%heading {
+  color: $cp-h--color;
+  background: transparent;
+  font-family: $cp-fontFamily--h;
+  margin: 0px;
+}
+
+h5, .h5 {
+	@extend %heading;
+	font-size: 1rem;
+	line-height: 1.25rem;
+	margin-top: 1.25rem;
+	margin-bottom: 0;
+}
+
+h4, .h4 {
+	@extend %heading;
+	font-size: 1rem;
+	line-height: 1.25rem;
+	margin-top: 1.25rem;
+	margin-bottom: 0;
+}
+
+h3, .h3 {
+	@extend %heading;
+	font-size: $cp-fontSize--h*$cp-scaleFactor;
+	line-height: $cp-lineHeight*$cp-scaleFactor;
+	margin-top: 1.25rem;
+	margin-bottom: 0;
+}
+
+h2, .h2 {
+	@extend %heading;
+	font-size: $cp-fontSize--h*$cp-scaleFactor*$cp-scaleFactor;
+	//font-weight: bold;
+	line-height: $cp-lineHeight*$cp-scaleFactor*$cp-scaleFactor;
+	margin: 1.25rem 0;
+}
+
+h1, .h1 {
+	@extend %heading;
+	font-size: $cp-fontSize--h*$cp-scaleFactor*$cp-scaleFactor*$cp-scaleFactor;
+	//font-weight: bold;
+	line-height: $cp-lineHeight*$cp-scaleFactor*$cp-scaleFactor*$cp-scaleFactor;
+	margin: 1.25rem 0;
+}
+
+.ce-headline-center {
+	text-align: center;
+}
+
+.ce-headline-right {
+	text-align: right;
+}

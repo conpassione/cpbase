@@ -34,16 +34,16 @@ FluidStyleguide:
         # Global:
         #     Css:
         #         - EXT:fluid_styleguide/Resources/Public/Css/Iframe.css
-        #          - EXT:cp_base/Resources/Public/Css/Layout.css
+        #          - EXT:cpbase/Resources/Public/Css/Layout.css
         #     Javascript:
         #         - EXT:fluid_styleguide/Resources/Public/Javascript/Iframe.min.js
-        #          - EXT:cp_base/Resources/Public/JavaScript/FluidStyleGuide.js
+        #          - EXT:cpbase/Resources/Public/JavaScript/FluidStyleGuide.js
         Packages:
             'Cp\CpBase\Components':
                 Css:
-                    - EXT:cp_base/Resources/Public/Css/Layout.css
+                    - EXT:cpbase/Resources/Public/Css/Layout.css
                 Javascript:
-                    - EXT:cp_base/Resources/Public/JavaScript/FluidStyleGuide.js
+                    - EXT:cpbase/Resources/Public/JavaScript/FluidStyleGuide.js
 
     ResponsiveBreakpoints:
         Desktop: '100%'

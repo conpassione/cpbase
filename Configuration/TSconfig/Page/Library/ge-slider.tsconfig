@@ -24,7 +24,7 @@ tx_gridelements.setup {
       }
     }
     # könnte auch flexformDS heissen, das Feld
-    pi_flexform_ds_file = EXT:cp_base/Configuration/FlexForms/ge-slider.xml
+    pi_flexform_ds_file = EXT:cpbase/Configuration/FlexForms/ge-slider.xml
     iconIdentifier = cp-geslider
     frame = slider
   }

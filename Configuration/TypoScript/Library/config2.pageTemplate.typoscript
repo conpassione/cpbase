@@ -62,9 +62,9 @@ page {
   10 {
     templateName  < lib.templateTemplateName
 
-    templateRootPaths.10 = EXT:cp_base/Resources/Private/Templates/
-    partialRootPaths.10 = EXT:cp_base/Resources/Private/Partials/
-    layoutRootPaths.10 = EXT:cp_base/Resources/Private/Layouts/
+    templateRootPaths.10 = EXT:cpbase/Resources/Private/Templates/
+    partialRootPaths.10 = EXT:cpbase/Resources/Private/Partials/
+    layoutRootPaths.10 = EXT:cpbase/Resources/Private/Layouts/
 
     dataProcessing {
       10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor

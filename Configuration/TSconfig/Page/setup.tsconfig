@@ -4,4 +4,4 @@
 # Generated 01.06.2020 by www.conpassione.ch
 #---------------------------------------------------------------
 
-@import 'EXT:cp_base/Configuration/TSconfig/Page/Library/*.tsconfig'
+@import 'EXT:cpbase/Configuration/TSconfig/Page/Library/*.tsconfig'

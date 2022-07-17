@@ -28,7 +28,7 @@ mod {
 	    				}
 					}
 				}
-				icon = EXT:cp_base/Resources/Public/Icons/Standard.gif
+				icon = EXT:cpbase/Resources/Public/Icons/Standard.gif
 			}
 			Start {
 				title = Start
@@ -59,7 +59,7 @@ mod {
 		      			}
 					}
 				}
-				icon = EXT:cp_base/Resources/Public/Icons/Start.gif
+				icon = EXT:cpbase/Resources/Public/Icons/Start.gif
 			}
 		}
 	}

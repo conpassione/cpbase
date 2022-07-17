@@ -12,7 +12,7 @@ if (!defined('TYPO3_MODE')) {
 
 // Provide TypoScript-File to select in TS-Template
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile (
-	'cp_base',
+	'cpbase',
 	'Configuration/TypoScript',
 	'Conpassione Base Extension'
 );

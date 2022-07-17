@@ -6,8 +6,8 @@
 
 # Load default processing options
 imports:
-    - { resource: "EXT:cp_base/Configuration/RTE/Editor/Processing.yaml" }
-    - { resource: "EXT:cp_base/Configuration/RTE/Editor/Config.yaml" }
+    - { resource: "EXT:cpbase/Configuration/RTE/Editor/Processing.yaml" }
+    - { resource: "EXT:cpbase/Configuration/RTE/Editor/Config.yaml" }
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
 
 # Add configuration for the editor
@@ -35,7 +35,7 @@ editor:
     magicline_color: "#EE8433"
 
     # the CSS file to be used inside the editor
-    contentsCss: "EXT:cp_base/Resources/Public/Css/Rte.css"
+    contentsCss: "EXT:cpbase/Resources/Public/Css/Rte.css"
 
     # can be "default", but a custom stylesSet can be defined here, which fits TYPO3 best
     stylesSet:

@@ -24,7 +24,7 @@ tx_gridelements.setup {
         }
       }
     }
-    pi_flexform_ds_file = EXT:cp_base/Configuration/FlexForms/ge-acc.xml
+    pi_flexform_ds_file = EXT:cpbase/Configuration/FlexForms/ge-acc.xml
     iconIdentifier = cp-geacccontainer
     frame = acccontainer
   }

@@ -1,13 +1,13 @@
 #---------------------------------------------------------------
-# TypoScript content.body for ext cp_base
+# TypoScript content.body for ext cpbase
 #
 # Generated 01.06.2020 by www.conpassione.ch
 #---------------------------------------------------------------
 
 # Custom Dataprocessing
-tt_content.image.dataProcessing.20 = Cp\CpBase\DataProcessing\CpGalleryProcessor
-tt_content.textmedia.dataProcessing.20 = Cp\CpBase\DataProcessing\CpGalleryProcessor
-tt_content.textpic.dataProcessing.20 = Cp\CpBase\DataProcessing\CpGalleryProcessor
+tt_content.image.dataProcessing.20 = Conpassione\Cpbase\DataProcessing\CpGalleryProcessor
+tt_content.textmedia.dataProcessing.20 = Conpassione\Cpbase\DataProcessing\CpGalleryProcessor
+tt_content.textpic.dataProcessing.20 = Conpassione\Cpbase\DataProcessing\CpGalleryProcessor
 
 # -------------------------------------------
 # colPos | Inhalt
@@ -30,9 +30,9 @@ tt_content.textpic.dataProcessing.20 = Cp\CpBase\DataProcessing\CpGalleryProcess
 
 # Fluid Styled Content Elemente anpassen
 lib.contentElement {
-	templateRootPaths.120 = EXT:cp_base/Resources/Private/CoreTemplates/Templates/
-	partialRootPaths.120 = EXT:cp_base/Resources/Private/CoreTemplates/Partials/
-	layoutRootPaths.120 = EXT:cp_base/Resources/Private/CoreTemplates/Layouts/
+	templateRootPaths.120 = EXT:cpbase/Resources/Private/CoreTemplates/Templates/
+	partialRootPaths.120 = EXT:cpbase/Resources/Private/CoreTemplates/Partials/
+	layoutRootPaths.120 = EXT:cpbase/Resources/Private/CoreTemplates/Layouts/
 }
 
 

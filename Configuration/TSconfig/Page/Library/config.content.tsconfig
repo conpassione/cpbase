@@ -103,13 +103,13 @@ TCEFORM.tt_content.imageorient {
 	removeItems = 17,18
 	addItems {
 		31 = Neben dem Text mitterechts
-		31.icon = EXT:cp_base/Resources/Public/Icons/content-beside-text-img-right-middle.png
+		31.icon = EXT:cpbase/Resources/Public/Icons/content-beside-text-img-right-middle.png
 		32 = Neben dem Text mittelinks
-		32.icon = EXT:cp_base/Resources/Public/Icons/content-beside-text-img-left-middle.png
+		32.icon = EXT:cpbase/Resources/Public/Icons/content-beside-text-img-left-middle.png
 		33 = Neben dem Text untenrechts
-		33.icon = EXT:cp_base/Resources/Public/Icons/content-beside-text-img-right-bottom.png
+		33.icon = EXT:cpbase/Resources/Public/Icons/content-beside-text-img-right-bottom.png
 		34 = Neben dem Text untenlinks
-		34.icon = EXT:cp_base/Resources/Public/Icons/content-beside-text-img-left-bottom.png
+		34.icon = EXT:cpbase/Resources/Public/Icons/content-beside-text-img-left-bottom.png
 	}
 	types.image.removeItems = 8,9,10,17,18,25,26,31,32,33,34
 }

@@ -30,7 +30,7 @@ tx_gridelements.setup {
         }
       }
     }
-    pi_flexform_ds_file = EXT:cp_base/Configuration/FlexForms/ge-3cols.xml
+    pi_flexform_ds_file = EXT:cpbase/Configuration/FlexForms/ge-3cols.xml
     iconIdentifier = cp-ge333333
     frame = cols
   }

@@ -1,5 +1,5 @@
 #---------------------------------------------------------------
-# TypoScript config2.pageHeader for ext cp_base
+# TypoScript config2.pageHeader for ext cpbase
 #
 # Generated 09.09.2019 by www.conpassione.ch
 #---------------------------------------------------------------
@@ -16,21 +16,21 @@ page {
   typeNum = 0
 
   # ShortcutIcon
-  shortcutIcon = EXT:cp_base/Resources/Public/Icons/Favicon/favicon.ico
+  shortcutIcon = EXT:cpbase/Resources/Public/Icons/Favicon/favicon.ico
   headerData.100 = TEXT
   headerData.100.value (
-		<link rel="apple-touch-icon" sizes="180x180" href="typo3conf/ext/cp_base/Resources/Public/Icons/Favicon/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="typo3conf/ext/cp_base/Resources/Public/Icons/Favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="typo3conf/ext/cp_base/Resources/Public/Icons/Favicon/favicon-16x16.png">
-		<link rel="manifest" href="typo3conf/ext/cp_base/Resources/Public/Icons/Favicon/manifest.json">
-		<link rel="mask-icon" href="typo3conf/ext/cp_base/Resources/Public/Icons/Favicon/safari-pinned-tab.svg" color="#b91d47">
+		<link rel="apple-touch-icon" sizes="180x180" href="typo3conf/ext/cpbase/Resources/Public/Icons/Favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="typo3conf/ext/cpbase/Resources/Public/Icons/Favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="typo3conf/ext/cpbase/Resources/Public/Icons/Favicon/favicon-16x16.png">
+		<link rel="manifest" href="typo3conf/ext/cpbase/Resources/Public/Icons/Favicon/manifest.json">
+		<link rel="mask-icon" href="typo3conf/ext/cpbase/Resources/Public/Icons/Favicon/safari-pinned-tab.svg" color="#b91d47">
   )
   headerData.100.append < lib.charCR
 
   # favicon
   meta.msapplication-TileColor = #b91d47
-  meta.msapplication-TileImage = typo3conf/ext/cp_base/Resources/Public/Icons/Favicon/mstile-144x144.png
-  meta.msapplication-config = typo3conf/ext/cp_base/Resources/Public/Icons/Favicon/browserconfig.xml
+  meta.msapplication-TileImage = typo3conf/ext/cpbase/Resources/Public/Icons/Favicon/mstile-144x144.png
+  meta.msapplication-config = typo3conf/ext/cpbase/Resources/Public/Icons/Favicon/browserconfig.xml
   meta.theme-color = #ffffff
 
   meta.viewport = width=device-width,initial-scale=1.0
@@ -39,31 +39,31 @@ page {
 
   # CSS einbinden
   // Developement Variant:
-  includeCSS.cp_base = EXT:cp_base/Resources/Public/Css/Layout.css
+  includeCSS.cpbase = EXT:cpbase/Resources/Public/Css/Layout.css
   # SCSS Compiler Variant:
   # includeCSS {
-  # 	cp_base = EXT:cp_base/Resources/Private/Sass/layout.scss
-  # 	cp_base.outputfile = EXT:cp_base/Resources/Public/Css/layout.css
-  # 	cp_base.formatter = ScssPhp\ScssPhp\Formatter\Crunched
+  # 	cpbase = EXT:cpbase/Resources/Private/Sass/layout.scss
+  # 	cpbase.outputfile = EXT:cpbase/Resources/Public/Css/layout.css
+  # 	cpbase.formatter = ScssPhp\ScssPhp\Formatter\Crunched
   # }
 
   # javaScript und jQuery einbinden
   includeJS {
-  	#picturefill = EXT:cp_base/Resources/Public/JavaScript/picturefill.min.js
+  	#picturefill = EXT:cpbase/Resources/Public/JavaScript/picturefill.min.js
   	#picturefill.async = 1
   }
 
   includeJSFooterlibs {
-    jQuery = EXT:cp_base/Resources/Public/JavaScript/jquery-3.5.1.min.js
+    jQuery = EXT:cpbase/Resources/Public/JavaScript/jquery-3.5.1.min.js
     jQuery.forceOnTop = 1
     jQuery.disableCompression = 1
-    jQueryUI = EXT:cp_base/Resources/Public/JavaScript/jquery-ui.min.js
+    jQueryUI = EXT:cpbase/Resources/Public/JavaScript/jquery-ui.min.js
     jQueryUI.async = 1
-    mail = EXT:cp_base/Resources/Public/JavaScript/mail.min.js
+    mail = EXT:cpbase/Resources/Public/JavaScript/mail.min.js
     mail.async = 1
-    # jQueryTabs = EXT:cp_base/Resources/Public/JavaScript/accessibletabs/jquery.tabs.min.js
+    # jQueryTabs = EXT:cpbase/Resources/Public/JavaScript/accessibletabs/jquery.tabs.min.js
     # jQueryTabs.async = 1
-    # tabs = EXT:cp_base/Resources/Public/JavaScript/tabs.js
+    # tabs = EXT:cpbase/Resources/Public/JavaScript/tabs.js
     # tabs.async = 1
   }
 }

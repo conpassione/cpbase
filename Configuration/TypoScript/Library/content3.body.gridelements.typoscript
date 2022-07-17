@@ -1,5 +1,5 @@
 #---------------------------------------------------------------
-# TypoScript content3.body.gridelements for ext cp_base
+# TypoScript content3.body.gridelements for ext cpbase
 #
 # Generated 01.06.2020 by www.conpassione.ch
 #---------------------------------------------------------------
@@ -11,10 +11,10 @@ tt_content.gridelements_pi1 {
     templateName = Default
     templateName.override.field = tx_gridelements_backend_layout
     templateRootPaths {
-        20 = EXT:cp_base/Resources/Private/Extensions/gridelements/Templates/
+        20 = EXT:cpbase/Resources/Private/Extensions/gridelements/Templates/
     }
     partialRootPaths {
-        20 = EXT:cp_base/Resources/Private/Extensions/gridelements/Partials/
+        20 = EXT:cpbase/Resources/Private/Extensions/gridelements/Partials/
     }
 
     dataProcessing {
@@ -58,7 +58,7 @@ tt_content.gridelements_pi1 {
 			fieldName = flexform_backgroundImage
 		}
 	}
-	dataProcessing.1032 = Cp\CpBase\DataProcessing\CpGalleryProcessor
+	dataProcessing.1032 = Conpassione\Cpbase\DataProcessing\CpGalleryProcessor
 	dataProcessing.1032 {
 		filesProcessedDataKey = files
 		as = cp-bgImageFiles

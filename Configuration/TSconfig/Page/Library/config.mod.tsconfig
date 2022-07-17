@@ -1,0 +1,21 @@
+#---------------------------------------------------------------
+# PageTS config.mod for ext cp_base
+#
+# Generated 01.06.2020 by www.conpassione.ch
+#---------------------------------------------------------------
+
+# Anzeige im Listenmodul konfigurieren
+[backend.user.isAdmin == false]
+mod.web_list {
+  # Tables ausblenden in Listenansicht
+  hideTables = pages
+}
+[global]
+
+# Linkvalidator konfigurieren
+mod.linkvalidator.linkhandler.reportHiddenRecords = 1
+
+# cke-editor konfigurieren
+RTE.default {
+	preset = cpbase
+}

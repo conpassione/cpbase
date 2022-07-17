@@ -1,0 +1,105 @@
+#---------------------------------------------------------------
+# TypoScript config.pageTemplate for ext cp_base
+#
+# Generated 09.09.2019 by www.conpassione.ch
+#---------------------------------------------------------------
+
+# aktuelles BE-Layout holen
+lib.templateTemplateName = TEXT
+lib.templateTemplateName {
+	# pagelayout sucht nach -> backend_layout, backend_layout_next_level in der RootLine
+  data = pagelayout
+  required = 1
+  split {
+    token = pagets__
+    cObjNum = 1
+    1.current = 1
+  }
+}
+
+# Seite erzeugen...
+# -------------------------------------------
+page {
+  # Body
+  #------------------------------------------
+  # Body-Tag mit Class individualisieren
+  bodyTag >
+  bodyTagCObject = COA
+  bodyTagCObject {
+  	# PID der Seite ausgeben
+    10 = TEXT
+    10 {
+      data = page:uid
+      wrap = cp-page-|
+    }
+    # ID des FE-Layout ausgeben
+    20 = TEXT
+    20.data = page:layout
+    20.stdWrap.noTrimWrap = | cp-felayout-||
+    wrap = <body class="|">
+  }
+
+  # Prepare Templating
+  #------------------------------------------
+  1 = LOAD_REGISTER
+  1.templateLayout.cObject = CASE
+  1.templateLayout.cObject {
+    key.data = page:layout
+
+    default = TEXT
+    default.value = Default
+
+    0 = TEXT
+    0.value = Standard
+
+  }
+
+
+  # Template
+  #------------------------------------------
+  #<body>-section füllen mit Inhalt, abhängig von FE- und BE-Layout
+  10 = FLUIDTEMPLATE
+  10 {
+    templateName  < lib.templateTemplateName
+
+    templateRootPaths.10 = EXT:cp_base/Resources/Private/Templates/
+    partialRootPaths.10 = EXT:cp_base/Resources/Private/Partials/
+    layoutRootPaths.10 = EXT:cp_base/Resources/Private/Layouts/
+
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      10 {
+        as = cp-navMain
+        levels = 2
+        #expandAll = 1
+        titleField = nav_title // title
+      }
+    }
+
+    variables {
+      cp-templateLayout = TEXT
+      cp-templateLayout.data = register:templateLayout
+
+      cp-templateTemplate < lib.templateTemplateName
+
+      cp-homeTitle = TEXT
+      cp-homeTitle.data = levelfield : 0, nav_title // leveltitle : 0
+      cp-homeTitle.insertData = 1
+      cp-homeUid = TEXT
+      cp-homeUid.data = leveluid : 0
+      cp-homeUid.insertData = 1
+
+      cp-logo = TEXT
+      cp-logo.value = {$ccat.cp-logoFile}
+      cp-logoAltText = TEXT
+      cp-logoAltText.value = {$cp-logoAltText}
+      cp-siteHeadline = TEXT
+      cp-siteHeadline.value = {$ccat.cp-siteHeadline}
+      cp-siteMail = TEXT
+      cp-siteMail.value = {$ccat.cp-siteMail}
+      cp-sitePhone = TEXT
+      cp-sitePhone.value = {$ccat.cp-sitePhone}
+    }
+  }
+  11 = RESTORE_REGISTER
+}

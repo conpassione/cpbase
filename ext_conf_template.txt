@@ -1,0 +1,14 @@
+ #---------------------------------------------------------------
+ # ext_conf_template file for ext cp_base
+ #
+ # Generated 01.06.2020 by www.conpassione.ch
+ #---------------------------------------------------------------
+
+# cat=conf/enable; type=boolean; label=Use default conPassione BackendConfiguration: Defaults to FALSE
+useDefaultBackendConfig = 0
+
+# cat=conf/enable; type=boolean; label=Use default conPassione FrontendConfiguration: Defaults to FALSE
+useDefaultFrontendConfig = 0
+
+# cat=conf/enable; type=boolean; label=Use default conPassione BELoginSkin: Set to FALSE for Standard, or overwrite it in EXT backend. Defaults to TRUE
+useDefaultBELoginSkin = 1

@@ -1,0 +1,31 @@
+# PageTSConfig TypoScript
+# -------------------------------------------
+# Konfiguration erstellt von conPassione gmbh
+# Version 7.6 LTS vom 4. Juni 2016
+# -------------------------------------------
+
+tx_gridelements.setup {
+  ge-slider {
+    title = Inhaltswechsler
+    description = Alle eingefügten Elemente werden abwechslungsweise angezeigt
+    config {
+      colCount = 1
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Inhaltswechsler
+              colPos = 31
+              allowed = textmedia,textpic,image
+            }
+          }
+        }
+      }
+    }
+    # könnte auch flexformDS heissen, das Feld
+    pi_flexform_ds_file = EXT:cp_base/Configuration/FlexForms/ge-slider.xml
+    iconIdentifier = cp-geslider
+    frame = slider
+  }
+}

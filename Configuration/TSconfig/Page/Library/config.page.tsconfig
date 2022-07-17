@@ -1,0 +1,102 @@
+#---------------------------------------------------------------
+# PageTS config.page for ext cp_base
+#
+# Generated 01.06.2020 by www.conpassione.ch
+#---------------------------------------------------------------
+
+TCEMAIN.table.pages.disablePrependAtCopy = 1
+
+TCEFORM.pages {
+	#TAB-Allgemein
+	#TAB-SEO
+	#TAB-Social Media
+	#TAB-Metadaten
+
+	#TAB-Erscheinungsbild
+	layout {
+		label = Layout
+		removeItems = 1,2,3
+		altLabels.0 = Standard
+		disableNoMatchingValueElement = 1
+	}
+	backend_layout {
+		removeItems = -1,0
+		#keepItems = -1
+		#altLabels.-1 = Standard
+		disableNoMatchingValueElement = 1
+	}
+	backend_layout_next_level {
+		removeItems = -1,0
+		#keepItems = -1
+		#altLabels.-1 = Standard
+		disableNoMatchingValueElement = 1
+	}
+
+	#TAB-Verhalten
+	#TAB-Ressourcen
+	#TAB-Sprache
+	#TAB-Zugriff
+	#TAB-Kategorien
+	#TAB-Hinweis
+}
+
+[backend.user.isAdmin == false]
+TCEFORM.pages {
+
+	#TAB-Allgemein
+	nav_title.disabled = 1
+	#subtitle.disabled = 1
+
+	#TAB-SEO
+	no_index.disabled = 1
+	no_follow.disabled = 1
+	#TAB-Social Media
+	#TAB-Metadaten
+	#TAB-Erscheinungsbild
+	#TAB-Verhalten
+	is_siteroot.disabled = 1
+	no_search.disabled = 1
+	php_tree_stop.disabled = 1
+	module.disabled = 1
+
+	#TAB-Ressourcen
+	#TypoScript
+	tsconfig_includes.disabled = 1
+	TSconfig.disabled = 1
+
+	#TAB-Sprache
+	#TAB-Zugriff
+	editlock.disabled = 1
+
+	#TAB-Kategorien
+	categories.disabled = 1
+
+	#TAB-Hinweis
+	rowDescription.disabled = 1
+
+}
+[global]
+
+# Defaultwerte für neue Seiten im Seitenbaum
+# die richtigen Rechte einschalten für neue Inhalte und Seiten
+# Redaktoren haben groupeid=2
+TCEMAIN.permissions {
+    groupid = 2
+    user = show,editcontent,edit,delete,new
+    group = show,editcontent,edit,delete,new
+    everybody = show
+}
+
+# Author etc. setzen
+TCAdefaults.pages {
+	author = conPassione gmbh
+	author_email = info@conpassione.ch
+	layout = 0
+	backend_layout = pagets__Standard
+	backend_layout_next_level = pagets__Standard
+	sitemap_changefreq = weekly
+}
+
+TCAdefaults.tt_content {
+	imagecols = 1
+}

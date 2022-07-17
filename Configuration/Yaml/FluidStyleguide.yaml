@@ -1,0 +1,67 @@
+FluidStyleguide:
+    Features:
+        # Enable/Disable markdown documentation rendering
+        Documentation: true
+
+        # Enable/Disable live editing of component fixture
+        Editor: true
+
+        # Enable/Disable zip download of component folder
+        ZipDownload: true
+
+        # Enable/Disable breakpoint switcher
+        ResponsiveBreakpoints: true
+
+        # Enable/Disable rulers
+        Ruler: false
+
+        # Escapes string input from the editor. This prevents Cross-Site-Scripting
+        # but leads to differing component output when using the editor.
+        EscapeInputFromEditor: true
+
+        # Show demo components in styleguide even if other components exist
+        DemoComponents: false
+
+        # Enable/Disable support for multiple languages
+        Languages: false
+
+    # Markup that will be wrapped around the component output in the styleguide
+    # This can be overwritten per component fixture by specifying
+    # "styleguideComponentContext" in the fixture data
+    # ComponentContext: '<div class="fluidStyleguideComponentSpacing">|</div>'
+
+    ComponentAssets:
+        # Global:
+        #     Css:
+        #         - EXT:fluid_styleguide/Resources/Public/Css/Iframe.css
+        #          - EXT:cp_base/Resources/Public/Css/Layout.css
+        #     Javascript:
+        #         - EXT:fluid_styleguide/Resources/Public/Javascript/Iframe.min.js
+        #          - EXT:cp_base/Resources/Public/JavaScript/FluidStyleGuide.js
+        Packages:
+            'Cp\CpBase\Components':
+                Css:
+                    - EXT:cp_base/Resources/Public/Css/Layout.css
+                Javascript:
+                    - EXT:cp_base/Resources/Public/JavaScript/FluidStyleGuide.js
+
+    ResponsiveBreakpoints:
+        Desktop: '100%'
+        Tablet: '768px'
+        Mobile: '400px'
+
+    Branding:
+        Title: "conPassione StyleGuide BasePackage"
+#       IntroFile: 'EXT:my_extension/Documentation/FluidStyleguide.md'
+#       IframeBackground: '#FFF'
+#       HighlightColor: '#00d8e6'
+#       FontFamily: "'Open Sans', Helvetica, FreeSans, Arial, sans-serif"
+
+    Languages:
+        default:
+            identifier: default
+            twoLetterIsoCode: de
+            locale: de_CH.UTF-8
+            hreflang: de
+            direction: ltr
+            label: Deutsch

@@ -1,0 +1,59 @@
+#---------------------------------------------------------------
+# TypoScript config.pageConfig for ext cp_base
+#
+# Generated 01.06.2020 by www.conpassione.ch
+#---------------------------------------------------------------
+
+page = PAGE
+
+# -------------------------------------------
+# Grundkonfiguration des Systems
+config {
+  #noPageTitle = 2
+  noScaleUp = 1
+
+  headerComment (
+  {$cp-copyrightMessage}
+  )
+  spamProtectEmailAddresses = -4
+  spamProtectEmailAddresses_atSubst = (at)
+
+  #Indizierung wird im Page-Objekt definiert
+  index_enable = 1
+  index_externals = 1
+}
+
+# Spracheinstellungen
+config {
+	linkVars = L(0-3)
+}
+
+# weitere Einstellungen
+config {
+  removeDefaultJS = 1
+  concatenateCss = 1
+  compressCss = 1
+  concatenateJs = 1
+  compressJs = 1
+}
+
+# Caching Konfiguration
+config {
+  no_cache = 0
+  sendCacheHeaders = 1
+  cache_period = 86400
+  cache_clearAtMidnight = 1
+}
+
+# SEO freundliche URL's erzeugen
+config {
+  absRefPrefix = auto
+}
+
+lib.parseFunc_RTE {
+	nonTypoTagStdWrap {
+		encapsLines.remapTag >
+		encapsLines.nonWrappedTag >
+	}
+	externalBlocks.table.stdWrap.HTMLparser.tags.table.fixAttrib.class.list := addToList(cp-table--striped, cp-table--lined, cp-table--bordered)
+}

@@ -1,0 +1,11 @@
+#---------------------------------------------------------------
+# TypoScript setup for ext cp_base
+#
+# Generated 01.06.2020 by www.conpassione.ch
+#---------------------------------------------------------------
+
+@import 'EXT:cp_base/Configuration/TypoScript/Library/*.typoscript'
+
+config.contentObjectExceptionHandler = 0
+# page.config.contentObjectExceptionHandler = 0
+# tt_content.config.contentObjectExceptionHandler = 0

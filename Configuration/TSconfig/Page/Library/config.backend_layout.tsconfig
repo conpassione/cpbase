@@ -1,0 +1,66 @@
+#---------------------------------------------------------------
+# PageTS config.backend_layout for ext cp_grid
+#
+# Generated 01.06.2020 by www.conpassione.ch
+#---------------------------------------------------------------
+
+mod {
+	web_layout {
+		BackendLayouts {
+			Standard {
+				title = Standard
+				config {
+					backend_layout {
+	    				colCount = 1
+	    				rowCount = 1
+	    				rows {
+		        			1 {
+		        				columns {
+		        					1 {
+		        						name = Inhalt
+		        						colPos = 0
+		        						#allowed {
+		        						#	CType = gridelements_pi1
+		        						#}
+		        					}
+		        				}
+		        			}
+	    				}
+					}
+				}
+				icon = EXT:cp_base/Resources/Public/Icons/Standard.gif
+			}
+			Start {
+				title = Start
+				config {
+					backend_layout {
+	    				colCount = 1
+	    				rowCount = 2
+	    				rows {
+		        			1 {
+		        				columns {
+		        					1 {
+		        						name = Inhalt
+		        						colPos = 0
+		        						#allowed {
+		        						#	CType = gridelements_pi1
+		        						#}
+		        					}
+		        				}
+		        			}
+			      			2 {
+			      				columns {
+			      					1 {
+		    							name = Fusszeile
+		    							colPos = 1
+									}
+			      				}
+			      			}
+		      			}
+					}
+				}
+				icon = EXT:cp_base/Resources/Public/Icons/Start.gif
+			}
+		}
+	}
+}

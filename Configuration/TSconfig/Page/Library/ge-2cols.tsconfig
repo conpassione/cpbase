@@ -1,0 +1,87 @@
+#---------------------------------------------------------------
+# PageTS ge-2cols (gridelements) for ext cp_base
+#
+# Generated 01.07.2017 by www.conpassione.ch
+#---------------------------------------------------------------
+
+tx_gridelements.setup {
+  ge-5050 {
+    title = 2Spalten5050
+    description = Zweispalten-Container 50% 50%
+    config {
+      colCount = 2
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Linke Spalte
+              colPos = 11
+            }
+            2 {
+              name = Rechte Spalte
+              colPos = 12
+            }
+          }
+        }
+      }
+    }
+    pi_flexform_ds_file = EXT:cp_base/Configuration/FlexForms/ge-2cols.xml
+    iconIdentifier = cp-ge5050
+    frame = cols
+  }
+
+  ge-3366 {
+    title = 2Spalten3366
+    description = Zweispalten-Container 33% 66%
+    config {
+      colCount = 3
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Linke Spalte
+              colPos = 11
+            }
+            2 {
+              name = Rechte Spalte
+              colspan = 2
+              colPos = 12
+            }
+          }
+        }
+      }
+    }
+    pi_flexform_ds_file = EXT:cp_base/Configuration/FlexForms/ge-2cols.xml
+    iconIdentifier = cp-ge3366
+    frame = cols
+  }
+
+  ge-6633 {
+    title = 2Spalten6633
+    description = Zweispalten-Container 66% 33%
+    config {
+      colCount = 3
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Linke Spalte
+              colspan = 2
+              colPos = 11
+            }
+            2 {
+              name = Rechte Spalte
+              colPos = 12
+            }
+          }
+        }
+      }
+    }
+    pi_flexform_ds_file = EXT:cp_base/Configuration/FlexForms/ge-2cols.xml
+    iconIdentifier = cp-ge6633
+    frame = cols
+  }
+}

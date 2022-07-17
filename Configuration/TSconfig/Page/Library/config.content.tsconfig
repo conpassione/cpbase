@@ -1,0 +1,116 @@
+#---------------------------------------------------------------
+# PageTS config.content for ext cp_grid
+#
+# Generated 09.09.2019 by www.conpassione.ch
+#---------------------------------------------------------------
+TCEMAIN.translateToMessage = %s:
+TCEMAIN.table.tt_content.disablePrependAtCopy = 1
+
+# Eigenschaften der CE-Elemente
+TCEFORM.tt_content {
+  linkToTop.disabled = 1
+  #space_before_class.disabled = 1
+  #space_after_class.disabled = 1
+  imageheight.disabled = 1
+  imageborder.disabled = 1
+  rowDescription.disabled = 1
+}
+# CE-Elemente auswählbar
+[backend.user.isAdmin == false]
+TCEFORM.tt_content {
+  # CE ausschalten:
+  # Typischer Seiteninhalt: header,text,textpic,textmedia,image,bullets,table,upload
+  # Spezielle Elemente: media,menu,html,div,shortcut
+  # Formulare: mailform,search,login,list
+  CType.removeItems = bullets, login, html, div
+}
+[global]
+
+# Definition der Überschriften
+TCEFORM.tt_content.header_layout {
+  removeItems = 0,4,5
+  altLabels {
+    1 = Haupttitel
+    2 = Titel
+    3 = Untertitel
+  }
+}
+
+# Definition des Erscheinungsbildes des Elementes (cp-section-layoutx)
+TCEFORM.tt_content.layout {
+  removeItems = 1,2,3
+  altLabels {
+    0 = Standard
+    # 1 = Unterstrichen
+    # 2 = Rahmen oben-unten
+    # 3 = Rahmen oben
+  }
+}
+
+# Definition der Rahmen und Hintergründe
+TCEFORM.tt_content.frame_class {
+	removeItems = ruler-before,ruler-after,indent,indent-left,indent-right,none
+	altLabels {
+		default = Standard
+	}
+	addItems {
+		framed = Rahmen eckig
+		framed--rounded = Rahmen gerundet
+		white = Weisse Box
+		white--shadowed = Weisse Schattenbox
+		lightgray = Hellgraue Box
+		dark = Dunkle Box
+		custom1 = C1 Box
+		custom2 = C2 Box
+		custom3 = C3 Box
+	}
+}
+
+# Definition Tabellenformate für CType table
+TCEFORM.tt_content.table_class {
+	altLabels {
+		striped = Zebratabelle
+		bordered = Tabelle mit Rahmen
+	}
+	addItems {
+		lined = Tabelle liniert
+	}
+}
+
+# Definition Tabellenheaderpos für CType table
+TCEFORM.tt_content.table_header_position {
+	addItems {
+		#3 = Gedreht
+	}
+}
+
+# Bildausrichtungen
+#  0 oben-mittig     -> above center
+#  1 oben-rechts     -> above right
+#  2 oben-links      -> above left
+#  8 unten-mittig    -> below center
+#  9 unten-rechts    -> below right
+# 10 unten-links     -> below left
+# 17 rechts floating -> intext right
+# 18 links floating  -> intext left
+# 25 oben-rechts     -> intext right noWrap
+# 26 oben-links      -> intext left noWrap
+# 31 mitte-rechts    -> intext right middle noWrap
+# 32 mitte-links     -> intext left middle noWrap
+# 33 unten-rechts    -> intext right below noWrap
+# 34 unten-links     -> intext left below noWrap
+TCEFORM.tt_content.imageorient {
+	removeItems = 17,18
+	addItems {
+		31 = Neben dem Text mitterechts
+		31.icon = EXT:cp_base/Resources/Public/Icons/content-beside-text-img-right-middle.png
+		32 = Neben dem Text mittelinks
+		32.icon = EXT:cp_base/Resources/Public/Icons/content-beside-text-img-left-middle.png
+		33 = Neben dem Text untenrechts
+		33.icon = EXT:cp_base/Resources/Public/Icons/content-beside-text-img-right-bottom.png
+		34 = Neben dem Text untenlinks
+		34.icon = EXT:cp_base/Resources/Public/Icons/content-beside-text-img-left-bottom.png
+	}
+	types.image.removeItems = 8,9,10,17,18,25,26,31,32,33,34
+}
+

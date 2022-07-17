@@ -1,0 +1,65 @@
+#---------------------------------------------------------------
+# TypoScript constants for ext cp_grid
+#
+# Generated 01.06.2020 by www.conpassione.ch
+#---------------------------------------------------------------
+
+# Sprachanpassungen
+# -------------------------------------------
+#
+# Voraussetzung:
+# Default-Sprache: Deutsch
+# 1. Fremdsprache: Französisch
+# 2. Fremdsprache: Italienisch
+# 3. Fremdsprache: Englisch
+#
+
+# Definitionen für Deutsch
+cp-logoAltText = Zurück zur Startseite
+config.language = de
+[siteLanguage("title") == "Français"]
+  #Definitionen Franzoesisch
+	cp-logoAltText = Retour à la page d'acceuille
+[global]
+
+[siteLanguage("title") == "Italiano"]
+  #Definitionen Italienisch
+	cp-logoAltText = Torno alla pagina iniziale
+[global]
+
+[siteLanguage("title") == "English"]
+ 	#Definitionen Englisch
+	cp-logoAltText = Back to the start page
+[global]
+
+# Extension Configurations in TS-Template-Constant-Editor
+# -------------------------------------------
+# textmedia
+styles.content.textmedia {
+	maxW = 2500
+	maxWInText = 1600
+	columnSpacing = 1
+	rowSpacing = 1
+	textMargin = 1
+	borderColor = transparent
+	borderWidth = 0
+	borderPadding = 0
+	linkWrap {
+		width = 1600m
+		height = 800m
+		lightboxEnabled = 1
+	}
+}
+
+styles.content.image.lazyLoading = lazy
+
+plugin {
+	jn_lighterbox {
+		albumLabel = Bild %1 of %2
+		wrapAround = 1
+		disableScrolling = 1
+		alwaysShowNavOnTouchDevices = 1
+		fadeDuration = 500
+		imageFadeDuration = 500
+	}
+}

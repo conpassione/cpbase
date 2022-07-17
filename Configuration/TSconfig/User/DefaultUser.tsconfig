@@ -1,0 +1,47 @@
+# ---------------------------------------------------------------
+# constants.ts for ext "cp_grid".
+#
+# Generated 01.06.2020
+# ---------------------------------------------------------------
+
+setup.default.startModule = dashboard
+setup.default.lang = de
+
+setup.override.edit_RTE = 1
+
+setup.override.resizeTextareas_Flexible = 1
+setup.override.resizeTextareas_MaxHeight = 500
+setup.override.titleLen = 50
+
+setup.override.thumbnailsByDefault = 1
+setup.override.edit_docModuleUpload = 0
+setup.default.showHiddenFilesAndFolders = 0
+
+setup.default.copyLevels =
+setup.default.recursiveDelete = 0
+
+
+options.pageTree.showPageIdWithTitle = 1
+options.folderTree.uploadFieldsInLinkBrowser = 5
+
+options.createFoldersInEB = 1
+options.defaultUploadFolder = 1:/
+options.defaultFileUploads = 5
+
+options.file_list.thumbnail.width = 200
+options.file_list.thumbnail.height = 200
+options.file_list.enableDisplayBigControlPanel = activated
+options.file_list.enableDisplayThumbnails = activated
+options.file_list.uploader.defaultAction = replace
+#options.file_list.uploader.defaultAction = rename
+#options.file_list.uploader.defaultAction = cancel
+
+#options.dashboard.dashboardPresetsForNewUsers = default
+
+# Tab Raster-Elemente
+setup.override.dragAndDropHideNewElementWizardInfoOverlay = 1
+setup.override.hideColumnHeaders = 1
+setup.override.hideContentPreview = 0
+setup.override.showGridInformation = 1
+setup.override.disableDragInWizard = 1
+setup.override.disableCopyFromPageButton = 0

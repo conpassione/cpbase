@@ -1,0 +1,91 @@
+#---------------------------------------------------------------
+# CKE-Editor config for ext cp_base
+#
+# Generated 01.07.2017 by www.conpassione.ch
+#---------------------------------------------------------------
+# For complete documentation see
+# http://docs.ckeditor.com/#!/api/CKEDITOR.config
+
+editor:
+  config:
+
+    # Allow any class or any data attribute in any tag
+    extraAllowedContent: "*(*)[data-*]"
+
+    height: 300
+    width: "auto"
+    toolbar: "Basic"
+    uiColor: "#F8F8F8"
+    magicline_color: "#FF3300"
+
+    removeDialogTabs: "image:advanced;link:advanced"
+
+    # Ensure that special characters are not converted to HTML entities
+    entities_latin: false
+    entities: false
+    FillEmptyBlocks: false
+    stylesSet: []
+    format_tags: "p;h1;h2;h3;div"
+
+    toolbarGroups:
+      - { name: clipboard, groups: [clipboard, undo] }
+      - { name: editing, groups: [find, selection, spellchecker] }
+      - { name: doc,  groups: [ copyformatting, cleanup, mode, about ] }
+      - "/"
+      - { name: styles }
+      - { name: links }
+      - { name: charstyles, groups: [ basicstyles, align] }
+      - { name: paragraphs, groups: [ list, blocks ] }
+      - { name: insert }
+      - { name: tools }
+      - { name: language }
+
+    justifyClasses:
+      - cp-align-left
+      - cp-align-center
+      - cp-align-right
+      - cp-align-justify
+
+    extraPlugins:
+      - copyformatting
+      - find
+      - justify
+      - language
+      - selectall
+      - smiley
+      - tabletools
+      - wordcount
+
+    removePlugins:
+      - image
+
+    removeButtons:
+      - Anchor
+      - BidiLtr,BidiRtl
+      - Save,NewPage,Preview,Print,Templates
+      - Form,Checkbox,Radio,TextField,Textarea,Select,ImageButton,HiddenField
+      - Subscript,Superscript,Strike,Anchor,Indent,Outdent
+      - Image,Flash,PageBreak,Iframe
+      - FontSize,Font
+      - TextColor
+      - BGColor
+
+    # Configure global wordcount plugin defaults
+    # Overwrite them in your RTE presets as it is necessary
+    wordcount:
+      showParagraphs: true
+      showWordCount: true
+      showCharCount: true
+      countSpacesAsChars: true
+      countHTML: false
+      countLineBreaks: false
+      maxWordCount: -1
+      maxCharCount: -1
+      pasteWarningDuration: 3000
+
+# Allow s and u tag
+processing:
+  allowTags:
+    - s
+    - u
+

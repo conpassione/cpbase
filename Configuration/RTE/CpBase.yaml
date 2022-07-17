@@ -1,0 +1,208 @@
+#---------------------------------------------------------------
+# CKE-Editor CpBase-Configuration for ext cp_base
+#
+# Generated 01.07.2017 by www.conpassione.ch
+#---------------------------------------------------------------
+
+# Load default processing options
+imports:
+    - { resource: "EXT:cp_base/Configuration/RTE/Editor/Processing.yaml" }
+    - { resource: "EXT:cp_base/Configuration/RTE/Editor/Config.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+  config:
+    scayt_sLang: "de_DE"
+#    scayt_autoStartup: true
+    # scayt_handleUndRedo: true
+    # scayt_inlineModeImmediateMarkup: true
+    wsc_lang: "de_DE"
+
+#    contentsLanguage: "de-ch"
+    defaultContentLanguage: "de"
+    defaultLanguage: "de"
+#    language: "de-ch"
+    language_list:
+      - "de-ch:Deutsch(CH)"
+      - "de:Deutsch"
+      - "fr:Français"
+      - "it:Italiano"
+      - "en:English"
+
+    uiColor: "#F8F8F8"
+    magicline_color: "#EE8433"
+
+    # the CSS file to be used inside the editor
+    contentsCss: "EXT:cp_base/Resources/Public/Css/Rte.css"
+
+    # can be "default", but a custom stylesSet can be defined here, which fits TYPO3 best
+    stylesSet:
+      # block level styles
+      - { name: "Titel highlight", element: "h2", attributes: { class: cp-highlight } }
+      - { name: "Tabelle zebra", element: "table", attributes: { class: contenttable ce-table-striped } }
+      - { name: "Tabelle gerahmt", element: "table", attributes: { class: contenttable ce-table-bordered } }
+      - { name: "Tabelle liniert", element: "table", attributes: { class: contenttable cp-table--lined } }
+      - { name: "Spalte10%", element: "td", attributes: { class: breite10 } }
+      - { name: "Spalte20%", element: "td", attributes: { class: breite20 } }
+      - { name: "Spalte30%", element: "td", attributes: { class: breite30 } }
+      - { name: "Spalte40%", element: "td", attributes: { class: breite40 } }
+      - { name: "Spalte50%", element: "td", attributes: { class: breite50 } }
+      - { name: "Spalte60%", element: "td", attributes: { class: breite60 } }
+      - { name: "Spalte30px", element: "td", attributes: { class: breite30px } }
+      - { name: "Spalte40px", element: "td", attributes: { class: breite40px } }
+      - { name: "Spalte50px", element: "td", attributes: { class: breite50px } }
+      - { name: "Spalte60px", element: "td", attributes: { class: breite60px } }
+      - { name: "Spalte70px", element: "td", attributes: { class: breite70px } }
+      - { name: "Spalte80px", element: "td", attributes: { class: breite80px } }
+      - { name: "Spalte90px", element: "td", attributes: { class: breite90px } }
+      - { name: "Spalte100px", element: "td", attributes: { class: breite100px } }
+      - { name: "Spalte120px", element: "td", attributes: { class: breite120px } }
+      - { name: "Spalte150px", element: "td", attributes: { class: breite150px } }
+      - { name: "Spalte180px", element: "td", attributes: { class: breite180px } }
+      # Inline styles
+      - { name: "Hervorhebung", element: "span", attributes: { class: cp-highlight } }
+      - { name: "Erfolg", element: "span", attributes: { class: cp-success } }
+      - { name: "Hinweis", element: "span", attributes: { class: cp-info } }
+      - { name: "Fehler", element: "span", attributes: { class: cp-error } }
+
+
+
+# Button config and defaults
+buttons:
+  link:
+    relAttribute:
+      enabled: true
+    properties:
+      class:
+        allowedClasses: cp-link--internal, cp-link--iinternal, cp-link--external, cp-link--iexternal, cp-link--button, cp-link--ibutton, cp-link--fon, cp-link--ifon, cp-link--mail, cp-link--imail, cp-link--fb, cp-link--ifb, cp-link--twitter, cp-link--itwitter, cp-link--insta, cp-link--iinsta, cp-link--download, cp-link--idownload
+    page:
+      properties:
+        class:
+          default: cp-link--iinternal
+    file:
+      properties:
+        class:
+          default: cp-link--idownload
+    url:
+      properties:
+        class:
+          default: cp-link--iexternal
+    mail:
+      properties:
+        class:
+          default: cp-link--imail
+    telephone:
+      properties:
+        class:
+          default: cp-link--ifon
+
+classes:
+  cp-link--internal:
+    name: 'interner Link'
+  cp-link--iinternal:
+    name: 'interner Link mit Icon'
+  cp-link--button:
+    name: 'Knopf'
+  cp-link--ibutton:
+    name: 'Knopf mit Icon'
+  cp-link--download:
+    name: 'Download'
+  cp-link--idownload:
+    name: 'Download mit Icon'
+  cp-link--external:
+    name: 'externer Link'
+  cp-link--iexternal:
+    name: 'externer Link mit Icon'
+  cp-link--fb:
+    name: 'Facebook'
+  cp-link--ifb:
+    name: 'Facebook mit Icon'
+  cp-link--twitter:
+    name: 'Twitter'
+  cp-link--itwitter:
+    name: 'Twitter mit Icon'
+  cp-link--insta:
+    name: 'Instagram'
+  cp-link--iinsta:
+    name: 'Instagram mit Icon'
+  cp-link--fon:
+    name: 'Telefon'
+  cp-link--ifon:
+    name: 'Telefon mit Icon'
+  cp-link--mail:
+    name: 'E-Mail'
+  cp-link--imail:
+    name: 'E-Mail mit Icon'
+
+#Classes config
+classesAnchor:
+  linkInternal:
+    class: cp-link--internal
+    type: page
+    target: _top
+  linkInternalIcon:
+    class: cp-link--iinternal
+    type: page
+    target: _top
+  linkInternalButton:
+    class: cp-link--button
+    type: page
+    target: _top
+  linkInternalButtonIcon:
+    class: cp-link--ibutton
+    type: page
+    target: _top
+  linkDownload:
+    class: cp-link--download
+    type: file
+    target: _blank
+  linkDownloadIcon:
+    class: cp-link--idownload
+    type: file
+    target: _blank
+  linkExternal:
+    class: cp-link--external
+    type: url
+    target: _blank
+  linkExternalIcon:
+    class: cp-link--iexternal
+    type: url
+    target: _blank
+  linkFacebook:
+    class: cp-link--fb
+    type: url
+    target: _blank
+  linkFacebookIcon:
+    class: cp-link--ifb
+    type: url
+    target: _blank
+  linkTwitter:
+    class: cp-link--twitter
+    type: url
+    target: _blank
+  linkTwitterIcon:
+    class: cp-link--itwitter
+    type: url
+    target: _blank
+  linkInstagram:
+    class: cp-link--insta
+    type: url
+    target: _blank
+  linkInstagramIcon:
+    class: cp-link--iinsta
+    type: url
+    target: _blank
+  linkFon:
+    class: cp-link--fon
+    type: telephone
+  linkFonIcon:
+    class: cp-link--ifon
+    type: telephone
+  linkMail:
+    class: cp-link--mail
+    type: mail
+  linkMailIcon:
+    class: cp-link--imail
+    type: mail

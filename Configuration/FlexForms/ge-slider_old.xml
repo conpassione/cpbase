@@ -1,0 +1,177 @@
+<T3DataStructure>
+    <meta type="array">
+        <langDisable>1</langDisable>
+    </meta>
+
+    <sheets>
+      <sDEF>
+        <!-- General Settings / Begin -->
+        <ROOT>
+            <TCEforms>
+                <sheetTitle>Slider-Optionen</sheetTitle>
+            </TCEforms>
+            <type>array</type>
+            <el>
+        		<backgroundImage>
+        			<TCEforms>
+        				<label>Hintergrundbild</label>
+        				<config>
+							<type>inline</type>
+							<foreign_table>sys_file_reference</foreign_table>
+							<foreign_table_field>tablenames</foreign_table_field>
+							<foreign_field>uid_foreign</foreign_field>
+							<foreign_label>uid_local</foreign_label>
+							<foreign_sortby>sorting_foreign</foreign_sortby>
+							<foreign_selector>uid_local</foreign_selector>
+							<minitems>0</minitems>
+							<maxitems>1</maxitems>
+							<foreign_selector_fieldTcaOverride type="array">
+								<config>
+									<appearance>
+										<elementBrowserType>file</elementBrowserType>
+										<elementBrowserAllowed>gif,jpg,jpeg,png,svg</elementBrowserAllowed>
+									</appearance>
+								</config>
+							</foreign_selector_fieldTcaOverride>
+							<foreign_match_fields type="array">
+								<fieldname>flexform_backgroundImage</fieldname>
+							</foreign_match_fields>
+
+							<appearance type="array">
+								<newRecordLinkAddTitle>1</newRecordLinkAddTitle>
+								<headerThumbnail>
+									<field>uid_local</field>
+									<width>64c</width>
+									<height>64</height>
+								</headerThumbnail>
+							</appearance>
+        				</config>
+        			</TCEforms>
+        		</backgroundImage>
+                <showPager>
+                    <TCEforms>
+                        <label>Pager anzeigen</label>
+                        <config>
+                            <type>check</type>
+                            <default>1</default>
+                            <items type="array">
+                            	<numIndex index="0"><numIndex index="0">Am unteren Bildrand Punkte anzeigen</numIndex></numIndex>
+                            </items>
+                        </config>
+                    </TCEforms>
+                </showPager>
+                <showControls>
+                    <TCEforms>
+                        <label>Controls anzeigen</label>
+                        <config>
+                            <type>check</type>
+                            <default>0</default>
+                            <items type="array">
+                            	<numIndex index="0"><numIndex index="0">Zeige links und rechts einen Pfeil zum Anklicken</numIndex></numIndex>
+                            </items>
+                        </config>
+                    </TCEforms>
+                </showControls>
+                <mode>
+                    <TCEforms>
+                        <label>Effekt</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                              <numIndex index="0" type="array">
+                              	<numIndex index="0">überblenden</numIndex>
+                              	<numIndex index="1">fade</numIndex>
+                            	</numIndex>
+                              <numIndex index="1" type="array">
+                              	<numIndex index="0">horizontal</numIndex>
+                              	<numIndex index="1">horizontal</numIndex>
+                              </numIndex>
+                              <numIndex index="2" type="array">
+                              	<numIndex index="0">vertikal</numIndex>
+                              	<numIndex index="1">vertical</numIndex>
+                              </numIndex>
+                            </items>
+                            <size>1</size>
+                            <minitems>0</minitems>
+                            <maxitems>1</maxitems>
+                            <default>fade</default>
+                        </config>
+                    </TCEforms>
+                </mode>
+                <easeing>
+                    <TCEforms>
+                        <label>Ease</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                              <numIndex index="0" type="array"><numIndex index="0">linear</numIndex><numIndex index="1">linear</numIndex></numIndex>
+                              <numIndex index="1" type="array"><numIndex index="0">ease</numIndex><numIndex index="1">ease</numIndex></numIndex>
+                              <numIndex index="2" type="array"><numIndex index="0">ease-in</numIndex><numIndex index="1">ease-in</numIndex></numIndex>
+                              <numIndex index="3" type="array"><numIndex index="0">ease-out</numIndex><numIndex index="1">ease-out</numIndex></numIndex>
+                              <numIndex index="4" type="array"><numIndex index="0">ease-in-out</numIndex><numIndex index="1">ease-in-out</numIndex></numIndex>
+                            </items>
+                            <size>1</size>
+                            <minitems>0</minitems>
+                            <maxitems>1</maxitems>
+                            <default>ease-in-out</default>
+                        </config>
+                    </TCEforms>
+                </easeing>
+                <speed>
+                    <TCEforms>
+                        <label>Animationsdauer ms</label>
+                        <config>
+                            <type>input</type>
+                            <size>8</size>
+                            <default>1000</default>
+                        </config>
+                    </TCEforms>
+                </speed>
+                <pause>
+                    <TCEforms>
+                        <label>Pause bis zur nächsten Animationen ms (Dauer von Animation + Anzeige)</label>
+                        <config>
+                            <type>input</type>
+                            <size>8</size>
+                            <default>3000</default>
+                        </config>
+                    </TCEforms>
+                </pause>
+                <autoDelay>
+                    <TCEforms>
+                        <label>Pause bis zur ersten Animation ms</label>
+                        <config>
+                            <type>input</type>
+                            <size>8</size>
+                            <default>500</default>
+                        </config>
+                    </TCEforms>
+                </autoDelay>
+                <minSlides>
+                	<TCEforms>
+                		<label>min. Anzahl Bilder (Carousel Mode)</label>
+                		<config>
+                			<type>input</type>
+                			<size>8</size>
+                			<default>1</default>
+                		</config>
+                	</TCEforms>
+                </minSlides>
+                <maxSlides>
+                	<TCEforms>
+                		<label>max. Anzahl Bilder (Carousel Mode)</label>
+                		<config>
+                			<type>input</type>
+                			<size>8</size>
+                			<default>1</default>
+                		</config>
+                	</TCEforms>
+                </maxSlides>
+            </el>
+        </ROOT>
+    </sDEF>
+        <!-- General Settings / End -->
+    </sheets>
+</T3DataStructure>

@@ -1,0 +1,51 @@
+#---------------------------------------------------------------
+# PageTS ge-accordion (gridelements) for ext cp_base
+#
+# Generated 01.07.2017 by www.conpassione.ch
+#---------------------------------------------------------------
+
+tx_gridelements.setup {
+  ge-accordion-container {
+    title = AccordionContainer
+    description = Ein vertical öffnendes Accordion
+    config {
+      colCount = 1
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Accordions
+              colPos = 21
+              allowed = gridelements_pi1
+              allowedGridTypes = ge-accordion
+            }
+          }
+        }
+      }
+    }
+    pi_flexform_ds_file = EXT:cp_base/Configuration/FlexForms/ge-acc.xml
+    iconIdentifier = cp-geacccontainer
+    frame = acccontainer
+  }
+  ge-accordion {
+    title = Accordion
+    description = Der Inhalt des Accordions
+    config {
+      colCount = 1
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = AccordionInhalt
+              colPos = 22
+            }
+          }
+        }
+      }
+    }
+    iconIdentifier = cp-geacc
+    frame = acc
+  }
+}

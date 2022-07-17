@@ -1,5 +1,5 @@
 {
-	"name": "cp/cp_base",
+	"name": "conpassione/cpbase",
 	"description": "conPassione Custom Layout",
 	"type": "typo3-cms-extension",
 	"version": "10.0",
@@ -7,19 +7,19 @@
 	"homepage": "http://www.conpassione.ch",
 	"license": "GPL-2.0-or-later",
 	"require": {
-		"typo3/cms-core": "^10"
+		"typo3/cms-core": "^11"
 	},
 	"autoload": {
 		"psr-4": {
-			"Cp\\CpBase\\": "Classes/"
+			"Conpassione\\Cpbase\\": "Classes/"
 		}
 	},
 	"replace": {
-		"cp/cp_base": "self.version"
+		"conpasssione/cpbase": "self.version"
 	},
 	"extra" : {
 		"typo3/cms": {
-			"extension-key": "cp_base"
+			"extension-key": "cpbase"
 		}
   }
 }

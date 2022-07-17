@@ -1,9 +1,9 @@
 <?php
 /*
  #---------------------------------------------------------------
- # ext_emconf file for ext cp_base
+ # ext_emconf file for ext cpbase
  #
- # Generated 01.06.2020 by www.conpassione.ch
+ # Generated 01.06.2022 by www.conpassione.ch
  #---------------------------------------------------------------
  */
 
@@ -23,8 +23,8 @@ $EM_CONF[$_EXTKEY] = array (
 	array (
 		'depends' =>
 		array (
-			'php' => '7.2.0-0.0.0',
-			'typo3' => '10.0.0-0.0.0',
+			'php' => '7.4.0-0.0.0',
+			'typo3' => '11.0.0-0.0.0',
 		),
 		'conflicts' =>
 		array (

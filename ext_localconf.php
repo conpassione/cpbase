@@ -27,7 +27,7 @@ if (TYPO3_MODE === 'BE') {
 			$beConf['loginLogo'] = 'EXT:cpbase/Resources/Public/Images/Logo_cp_grau.png';
 		}
 		if ($beConf['loginHighlightColor']=='') {
-			$beConf['loginHighlightColor'] = '#009ee0';
+			$beConf['loginHighlightColor'] = '#009ee1';
 		}
 		if ($beConf['loginBackgroundImage']=='') {
 			$beConf['loginBackgroundImage'] = 'EXT:cpbase/Resources/Public/Images/bglogin.svg';

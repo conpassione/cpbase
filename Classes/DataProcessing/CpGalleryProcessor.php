@@ -13,7 +13,7 @@
  * The TYPO3 project - inspiring people to share!
  */
 
-namespace Cp\CpBase\DataProcessing;
+namespace Conpassione\Cpbase\DataProcessing;
 
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
 use TYPO3\CMS\Core\Resource\FileInterface;
@@ -98,23 +98,23 @@ class CpGalleryProcessor implements DataProcessorInterface
     /**
      * The content object renderer
      *
-     * @var \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer
+     * @var ContentObjectRenderer
      */
-    protected $contentObjectRenderer;
+    protected ContentObjectRenderer $contentObjectRenderer;
 
     /**
      * The processor configuration
      *
      * @var array
      */
-    protected $processorConfiguration;
+    protected array $processorConfiguration;
 
     /**
      * Matching the tt_content field towards the imageOrient option
      *
      * @var array
      */
-    protected $availableGalleryPositions = [
+    protected array $availableGalleryPositions = [
         'horizontal' => [
             'center' => [0, 8],
             'right' => [1, 9, 17, 25, 31, 33],
@@ -135,7 +135,7 @@ class CpGalleryProcessor implements DataProcessorInterface
      *
      * @var array
      */
-    protected $galleryData = [
+    protected array $galleryData = [
         'position' => [
             'horizontal' => '',
             'vertical' => '',
@@ -159,71 +159,71 @@ class CpGalleryProcessor implements DataProcessorInterface
     /**
      * @var int
      */
-    protected $numberOfColumns;
+    protected int $numberOfColumns;
 
     /**
      * @var int
      */
-    protected $mediaOrientation;
+    protected int $mediaOrientation;
 
     /**
      * @var int
      */
-    protected $maxGalleryWidth;
+    protected int $maxGalleryWidth;
 
     /**
      * @var int
      */
-    protected $maxGalleryWidthInText;
+    protected int $maxGalleryWidthInText;
 
     /**
      * @var int
      */
-    protected $equalMediaHeight;
+    protected int $equalMediaHeight;
 
     /**
      * @var int
      */
-    protected $equalMediaWidth;
+    protected int $equalMediaWidth;
 
     /**
      * @var int
      */
-    protected $columnSpacing;
+    protected int $columnSpacing;
 
     /**
      * @var bool
      */
-    protected $borderEnabled;
+    protected bool $borderEnabled;
 
     /**
      * @var int
      */
-    protected $borderWidth;
+    protected int $borderWidth;
 
     /**
      * @var int
      */
-    protected $borderPadding;
+    protected int $borderPadding;
 
     /**
      * @var string
      */
-    protected $cropVariant = 'default';
+    protected string $cropVariant = 'default';
 
     /**
      * The (filtered) media files to be used in the gallery
      *
      * @var FileInterface[]
      */
-    protected $fileObjects = [];
+    protected array $fileObjects = [];
 
     /**
      * The calculated dimensions for each media element
      *
      * @var array
      */
-    protected $mediaDimensions = [];
+    protected array $mediaDimensions = [];
 
     /**
      * Process data for a gallery, for instance the CType "textmedia"
@@ -240,7 +240,7 @@ class CpGalleryProcessor implements DataProcessorInterface
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
-    ) {
+    ): array {
         if (isset($processorConfiguration['if.']) && !$cObj->checkIf($processorConfiguration['if.'])) {
             return $processedData;
         }
@@ -299,7 +299,7 @@ class CpGalleryProcessor implements DataProcessorInterface
      * @param string|null $dataArrayKey
      * @return string
      */
-    protected function getConfigurationValue($key, $dataArrayKey = null)
+    protected function getConfigurationValue(string $key, string $dataArrayKey = null): string
     {
         $defaultValue = '';
         if ($dataArrayKey && isset($this->contentObjectRenderer->data[$dataArrayKey])) {
@@ -318,7 +318,7 @@ class CpGalleryProcessor implements DataProcessorInterface
      * Gallery has a horizontal and a vertical position towards the text
      * and a possible wrapping of the text around the gallery.
      */
-    protected function determineGalleryPosition()
+    protected function determineGalleryPosition() : void
     {
         foreach ($this->availableGalleryPositions as $positionDirectionKey => $positionDirectionValue) {
             foreach ($positionDirectionValue as $positionKey => $positionArray) {
@@ -336,7 +336,7 @@ class CpGalleryProcessor implements DataProcessorInterface
     /**
      * Get the gallery width based on vertical position
      */
-    protected function determineMaximumGalleryWidth()
+    protected function determineMaximumGalleryWidth() :void
     {
         if ($this->galleryData['position']['vertical'] === 'intext') {
             $this->galleryData['width'] = $this->maxGalleryWidthInText;
@@ -348,11 +348,11 @@ class CpGalleryProcessor implements DataProcessorInterface
     /**
      * Calculate the amount of rows and columns
      */
-    protected function calculateRowsAndColumns()
+    protected function calculateRowsAndColumns() :void
     {
 
         // If no columns defined, set it to 1
-        $columns = max((int)$this->numberOfColumns, 1);
+        $columns = max($this->numberOfColumns, 1);
 
         // When more columns than media elements, set the columns to the amount of media elements
         if ($columns > $this->galleryData['count']['files']) {
@@ -378,7 +378,7 @@ class CpGalleryProcessor implements DataProcessorInterface
      *
      * File objects MUST already be filtered. They need a height and width to be shown in the gallery
      */
-    protected function calculateMediaWidthsAndHeights()
+    protected function calculateMediaWidthsAndHeights() : void
     {
         $columnSpacingTotal = ($this->galleryData['count']['columns'] - 1) * $this->columnSpacing;
 
@@ -476,14 +476,14 @@ class CpGalleryProcessor implements DataProcessorInterface
      *
      * @return int
      */
-    protected function getCroppedDimensionalProperty(FileInterface $fileObject, $dimensionalProperty)
+    protected function getCroppedDimensionalProperty(FileInterface $fileObject, string $dimensionalProperty) : int
     {
         if (!$fileObject->hasProperty('crop') || empty($fileObject->getProperty('crop'))) {
             return $fileObject->getProperty($dimensionalProperty);
         }
 
         $croppingConfiguration = $fileObject->getProperty('crop');
-        $cropVariantCollection = CropVariantCollection::create((string)$croppingConfiguration);
+        $cropVariantCollection = CropVariantCollection::create($croppingConfiguration);
         return (int)$cropVariantCollection->getCropArea($this->cropVariant)->makeAbsoluteBasedOnFile($fileObject)->asArray()[$dimensionalProperty];
     }
 
@@ -492,7 +492,7 @@ class CpGalleryProcessor implements DataProcessorInterface
      *
      * Make an array for rows, columns and configuration
      */
-    protected function prepareGalleryData()
+    protected function prepareGalleryData() : void
     {
         for ($row = 1; $row <= $this->galleryData['count']['rows']; $row++) {
             for ($column = 1; $column <= $this->galleryData['count']['columns']; $column++) {

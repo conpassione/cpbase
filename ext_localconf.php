@@ -1,7 +1,7 @@
 <?php
 /*
  #---------------------------------------------------------------
- # ext_localconf file for ext cp_base
+ # ext_localconf file for ext cpbase
  #
  # Generated 01.06.2020 by www.conpassione.ch
  #---------------------------------------------------------------
@@ -63,14 +63,7 @@ if (($extConf['useDefaultBackendConfig']) || ($extConf['useDefaultFrontendConfig
 	}
 }
 
-// Fluid Components konfigurieren
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fluid_components']['namespaces']['Conpassione\\Cpbase\\Components'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('cp_base', 'Resources/Private/Components');
-
-
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['cfc'] = ['Conpassione\Cpbase\Components'];
-
-
-// In cp_base verwendete Icons laden
+// In cpbase verwendete Icons laden
 $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 
 $iconRegistry->registerIcon(

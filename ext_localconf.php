@@ -17,7 +17,7 @@ if (!defined('TYPO3_MODE')) {
 $extConf = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class)->get('cpbase');
 
 // BE-Login konfigurieren
-if (TYPO3_MODE === 'BE') {
+/*if (TYPO3_MODE === 'BE') {
 	if ($extConf['useDefaultBELoginSkin']) {
 		$beExtConf = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class);
 
@@ -44,10 +44,10 @@ if (TYPO3_MODE === 'BE') {
 
 		$GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend'] = $beConf;
 	}
-};
+};*/
 
 
-if (($extConf['useDefaultBackendConfig']) || ($extConf['useDefaultFrontendConfig'])){
+//if (($extConf['useDefaultBackendConfig']) || ($extConf['useDefaultFrontendConfig'])){
 	// Typoscript konfigurieren
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
 		@import "EXT:cpbase/Configuration/TSconfig/Page/setup.tsconfig"
@@ -61,7 +61,7 @@ if (($extConf['useDefaultBackendConfig']) || ($extConf['useDefaultFrontendConfig
 	if (empty($GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['cpbase'])) {
 	    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['cpbase'] = 'EXT:cpbase/Configuration/RTE/CpBase.yaml';
 	}
-}
+//}
 
 // In cpbase verwendete Icons laden
 $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);

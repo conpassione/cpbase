@@ -9,7 +9,6 @@ setup.default.lang = de
 
 setup.override.edit_RTE = 1
 
-setup.override.resizeTextareas_Flexible = 1
 setup.override.resizeTextareas_MaxHeight = 500
 setup.override.titleLen = 50
 

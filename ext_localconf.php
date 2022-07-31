@@ -69,10 +69,6 @@ try {
 } catch (ExtensionConfigurationExtensionNotConfiguredException|ExtensionConfigurationPathDoesNotExistException $e) {
 }
 
-// Fluid Components konfigurieren
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fluid_components']['namespaces']['Conpassione\\Cpbase\\Components'] = ExtensionManagementUtility::extPath('cpbase', 'Resources/Private/Components');
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['cfc'] = ['Conpassione\Cpbase\Components'];
-
 // In cpbase verwendete Icons laden
 $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
 

@@ -5,64 +5,64 @@
 #---------------------------------------------------------------
 
 mod {
-	web_layout {
-		BackendLayouts {
-			Standard {
-				title = Standard
-				config {
-					backend_layout {
+  web_layout {
+    BackendLayouts {
+      Standard {
+        title = Standard
+        config {
+          backend_layout {
             docktype = 1
-	    				colCount = 1
-	    				rowCount = 1
-	    				rows {
-		        			1 {
-		        				columns {
-		        					1 {
-		        						name = Inhalt
-		        						colPos = 0
-		        						#allowed {
-		        						#	CType = gridelements_pi1
-		        						#}
-		        					}
-		        				}
-		        			}
-	    				}
-					}
-				}
-				icon = EXT:cpbase/Resources/Public/Icons/Standard.gif
-			}
-			Start {
-				title = Start
-				config {
-					backend_layout {
+            colCount = 1
+            rowCount = 1
+            rows {
+              1 {
+                columns {
+                  1 {
+                    name = Inhalt
+                    colPos = 0
+                    #allowed {
+                    #  CType = xxx
+                    #}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      Start {
+        title = Start
+        config {
+          backend_layout {
             docktype = 366501
-	    				colCount = 1
-	    				rowCount = 2
-	    				rows {
-		        			1 {
-		        				columns {
-		        					1 {
-		        						name = Inhalt
-		        						colPos = 0
-		        						#allowed {
-		        						#	CType = gridelements_pi1
-		        						#}
-		        					}
-		        				}
-		        			}
-			      			2 {
-			      				columns {
-			      					1 {
-		    							name = Fusszeile
-		    							colPos = 1
-									}
-			      				}
-			      			}
-		      			}
-					}
-				}
-				icon = EXT:cpbase/Resources/Public/Icons/Start.gif
-			}
-		}
-	}
+            colCount = 1
+            rowCount = 2
+            rows {
+              1 {
+                columns {
+                  1 {
+                    name = Inhalt
+                    colPos = 0
+                    #allowed {
+                    #  CType = xxx
+                    #}
+                  }
+                }
+              }
+
+              2 {
+                columns {
+                  1 {
+                    name = Fusszeile
+                    colPos = 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

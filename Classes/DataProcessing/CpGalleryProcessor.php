@@ -21,7 +21,7 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException;
 
-/**
+/*
  * This data processor will calculate rows, columns and dimensions for a gallery
  * based on several settings and can be used for f.i. the CType "textmedia"
  *

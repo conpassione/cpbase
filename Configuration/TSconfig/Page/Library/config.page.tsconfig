@@ -19,17 +19,13 @@ TCEFORM.pages {
 		altLabels.0 = Standard
 		disableNoMatchingValueElement = 1
 	}
+
 	backend_layout {
-		removeItems = -1,0
-		#keepItems = -1
-		#altLabels.-1 = Standard
-		disableNoMatchingValueElement = 1
+    disabled = 1
 	}
+
 	backend_layout_next_level {
-		removeItems = -1,0
-		#keepItems = -1
-		#altLabels.-1 = Standard
-		disableNoMatchingValueElement = 1
+		disabled = 1
 	}
 
 	#TAB-Verhalten

@@ -15,8 +15,8 @@ defined('TYPO3') or die('Access denied.');
 
     // Build or own drop in flyout menu for creating new pages, in the order we prefer
     $allDoktypesForFlyoutMenu = [
-        \B13\SiteT3demo\PageConfiguration::DOKTYPE_CONTENTPAGE,
-        \B13\SiteT3demo\PageConfiguration::DOKTYPE_STARTPAGE,
+        \Conpassione\Cpbase\PageConfiguration::DOKTYPE_CONTENTPAGE,
+        \Conpassione\Cpbase\PageConfiguration::DOKTYPE_STARTPAGE,
         \TYPO3\CMS\Core\Domain\Repository\PageRepository::DOKTYPE_SHORTCUT,
         \TYPO3\CMS\Core\Domain\Repository\PageRepository::DOKTYPE_LINK,
         \TYPO3\CMS\Core\Domain\Repository\PageRepository::DOKTYPE_SYSFOLDER,

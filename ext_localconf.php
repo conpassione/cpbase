@@ -24,110 +24,62 @@ use TYPO3\CMS\Core\Core\Environment;
 try {
     $extConf = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('cpbase');
 
-    // BE-Login konfigurieren
-
-    if ($extConf['useDefaultBELoginSkin']) {
-        $beExtConf = GeneralUtility::makeInstance(ExtensionConfiguration::class);
-
-        $beConf = $beExtConf->get('backend');
-
-        if ($beConf['loginLogo']==='') {
-            $beConf['loginLogo'] = 'EXT:cpbase/Resources/Public/Images/Logo_cp_grau.png';
-        }
-        if ($beConf['loginHighlightColor']==='') {
-            $beConf['loginHighlightColor'] = '#009ee1';
-        }
-        if ($beConf['loginBackgroundImage']==='') {
-            $beConf['loginBackgroundImage'] = 'EXT:cpbase/Resources/Public/Images/bglogin.svg';
-        }
-
-        if (Environment::getContext() == 'Development') {
-            $beConf['backendLogo'] = 'EXT:cpbase/Resources/Public/Icons/alfabeta.svg';
-        } else {
-            $beConf['backendLogo'] = '';
-        }
-
-        $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend'] = $beConf;
+    if (Environment::getContext() == 'Development') {
+        $beConf['backendLogo'] = 'EXT:cpbase/Resources/Public/Icons/alfabeta.svg';
+    } else {
+        $beConf['backendLogo'] = '';
     }
 
+    // Typoscript konfigurieren
+    ExtensionManagementUtility::addPageTSConfig('
+        @import "EXT:cpbase/Configuration/TSconfig/Page/setup.tsconfig"
+    ');
 
-    if (($extConf['useDefaultBackendConfig']) || ($extConf['useDefaultFrontendConfig'])) {
-        // Typoscript konfigurieren
-        ExtensionManagementUtility::addPageTSConfig('
-            @import "EXT:cpbase/Configuration/TSconfig/Page/setup.tsconfig"
-        ');
+    ExtensionManagementUtility::addUserTSConfig('
+            @import "EXT:cpbase/Configuration/TSconfig/User/DefaultUser.tsconfig">
+    ');
 
-        ExtensionManagementUtility::addUserTSConfig('
-                @import "EXT:cpbase/Configuration/TSconfig/User/DefaultUser.tsconfig">
-        ');
-
-        // CK-Editor Konfiguration laden
-        if (empty($GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['cpbase'])) {
-            $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['cpbase'] = 'EXT:cpbase/Configuration/RTE/CpBase.yaml';
-        }
+    // CK-Editor Konfiguration laden
+    if (empty($GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['cpbase'])) {
+        $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['cpbase'] = 'EXT:cpbase/Configuration/RTE/CpBase.yaml';
     }
 } catch (ExtensionConfigurationExtensionNotConfiguredException|ExtensionConfigurationPathDoesNotExistException $e) {
 }
 
 // In cpbase verwendete Icons laden
 $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
+// DokTypes laden
+$cpCustomDoktypes = \Conpassione\Cpbase\PageConfiguration::getCpDoktypes();
 
-$iconRegistry->registerIcon(
-    'cp-ge5050',
-    SvgIconProvider::class,
-    ['source' => 'EXT:cpbase/Resources/Public/Icons/ge5050.svg']
-);
+ExtensionManagementUtility::addUserTSConfig('options.pageTree.doktypesToShowInNewPageDragArea = 1');
 
-$iconRegistry->registerIcon(
-    'cp-ge3366',
-    SvgIconProvider::class,
-    ['source' => 'EXT:cpbase/Resources/Public/Icons/ge3366.svg']
-);
+foreach ($cpCustomDoktypes as $dokType => $dokTypeValue) {
+    $iconRegistry->registerIcon(
+        'apps-pagetree-' . $dokTypeValue[1] . '-default',
+        SvgIconProvider::class,
+        ['source' => 'EXT:cpbase/Resources/Public/Icons/apps-pagetree-' . $dokTypeValue[1] . '-default.svg']
+    );
 
-$iconRegistry->registerIcon(
-    'cp-ge6633',
-    SvgIconProvider::class,
-    ['source' => 'EXT:cpbase/Resources/Public/Icons/ge6633.svg']
-);
+    $iconRegistry->registerIcon(
+        'apps-pagetree-' . $dokTypeValue[1] . '-hideinmenu',
+        SvgIconProvider::class,
+        ['source' => 'EXT:cpbase/Resources/Public/Icons/apps-pagetree-' . $dokTypeValue[1] . '-hideinmenu.svg']
+    );
 
-$iconRegistry->registerIcon(
-    'cp-ge333333',
-    SvgIconProvider::class,
-    ['source' => 'EXT:cpbase/Resources/Public/Icons/ge333333.svg']
-);
+    $iconRegistry->registerIcon(
+        'apps-pagetree-' . $dokTypeValue[1] . '-root',
+        SvgIconProvider::class,
+        ['source' => 'EXT:cpbase/Resources/Public/Icons/apps-pagetree-' . $dokTypeValue[1] . '-root.svg']
+    );
 
-$iconRegistry->registerIcon(
-    'cp-ge252550',
-    SvgIconProvider::class,
-    ['source' => 'EXT:cpbase/Resources/Public/Icons/ge252550.svg']
-);
+    ExtensionManagementUtility::addUserTSConfig('options.pageTree.doktypesToShowInNewPageDragArea := addToList(' . $dokType . ')');
+}
 
-$iconRegistry->registerIcon(
-    'cp-geslider',
-    SvgIconProvider::class,
-    ['source' => 'EXT:cpbase/Resources/Public/Icons/geslider.svg']
-);
+// Remove the doktypes we do not use
+ExtensionManagementUtility::addUserTSConfig('options.pageTree.doktypesToShowInNewPageDragArea := addToList(3,4,254)');
+// ExtensionManagementUtility::addUserTSConfig('options.pageTree.doktypesToShowInNewPageDragArea := removeFromList(6,7,199,255)');
 
-$iconRegistry->registerIcon(
-    'cp-geboxcontainer',
-    SvgIconProvider::class,
-    ['source' => 'EXT:cpbase/Resources/Public/Icons/geboxcontainer.svg']
-);
+// show additional information in page layout header for "Notes of Interest".
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/db_layout.php']['drawHeaderHook'][] = Conpassione\Cpbase\Hooks\PageLayoutHeaderHook::class . '->drawHeader';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['recordlist/Modules/Recordlist/index.php']['drawHeaderHook'][] = Conpassione\Cpbase\Hooks\PageLayoutHeaderHook::class . '->drawHeader';
 
-$iconRegistry->registerIcon(
-    'cp-gebox',
-    SvgIconProvider::class,
-    ['source' => 'EXT:cpbase/Resources/Public/Icons/gebox.svg']
-);
-
-$iconRegistry->registerIcon(
-    'cp-geacccontainer',
-    SvgIconProvider::class,
-    ['source' => 'EXT:cpbase/Resources/Public/Icons/geacccontainer.svg']
-);
-
-$iconRegistry->registerIcon(
-    'cp-geacc',
-    SvgIconProvider::class,
-    ['source' => 'EXT:cpbase/Resources/Public/Icons/geacc.svg']
-);

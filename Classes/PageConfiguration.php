@@ -12,27 +12,17 @@ namespace Conpassione\Cpbase;
  * of the License, or any later version.
  */
 
-use Exception;
-
 /**
  * This project has specific backend layouts based on the page type,
  * which is mapped in here.
  */
 class PageConfiguration
 {
-    public const DOKTYPE_CONTENTPAGE = 1;
-    public const DOKTYPE_STARTPAGE = 366510;
+    public const DOKTYPE_STARTPAGE = 210;
 
-    protected array $backendLayoutMapping = [
-        self::DOKTYPE_CONTENTPAGE => 'pagets__Contentpage',
-        self::DOKTYPE_STARTPAGE => 'pagets__Startpage',
-    ];
-
-    public function getBackendLayout(int $doktype): string
+    public static function getCpDoktypes(): array
     {
-        if (empty($this->backendLayoutMapping[$doktype])) {
-            throw new Exception('No backend layout mapping for doktype ' . $doktype, 1553253111);
-        }
-        return $this->backendLayoutMapping[$doktype];
+        static $cp_dokTypes = [self::DOKTYPE_STARTPAGE => ['Startseite', 'page-start']];
+        return $cp_dokTypes;
     }
 }

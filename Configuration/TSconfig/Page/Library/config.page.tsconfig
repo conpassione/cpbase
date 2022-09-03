@@ -14,10 +14,7 @@ TCEFORM.pages {
 
 	#TAB-Erscheinungsbild
 	layout {
-		label = Layout
-		removeItems = 1,2,3
-		altLabels.0 = Standard
-		disableNoMatchingValueElement = 1
+    disabled = 1
 	}
 
 	backend_layout {
@@ -28,6 +25,11 @@ TCEFORM.pages {
 		disabled = 1
 	}
 
+  doktype {
+    removeItems = 6,7,199,255
+    altLabels.1 = Inhaltsseite
+  }
+
 	#TAB-Verhalten
 	#TAB-Ressourcen
 	#TAB-Sprache
@@ -35,6 +37,7 @@ TCEFORM.pages {
 	#TAB-Kategorien
 	#TAB-Hinweis
 }
+
 
 [backend.user.isAdmin == false]
 TCEFORM.pages {
@@ -58,7 +61,7 @@ TCEFORM.pages {
 	#TAB-Ressourcen
 	#TypoScript
 	tsconfig_includes.disabled = 1
-	TSconfig.disabled = 1
+	tsconfig.disabled = 1
 
 	#TAB-Sprache
 	#TAB-Zugriff
@@ -88,8 +91,6 @@ TCAdefaults.pages {
 	author = conPassione gmbh
 	author_email = info@conpassione.ch
 	layout = 0
-	backend_layout = pagets__Standard
-	backend_layout_next_level = pagets__Standard
 	sitemap_changefreq = weekly
 }
 

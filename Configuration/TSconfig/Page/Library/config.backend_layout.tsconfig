@@ -7,11 +7,11 @@
 mod {
   web_layout {
     BackendLayouts {
-      Standard {
-        title = Standard
+      Contentpage {
+        title = Contentpage(1)
         config {
           backend_layout {
-            docktype = 1
+            doktype = 1
             colCount = 1
             rowCount = 1
             rows {
@@ -31,11 +31,11 @@ mod {
         }
       }
 
-      Start {
-        title = Start
+      Startpage {
+        title = Startpage(210)
         config {
           backend_layout {
-            docktype = 366501
+            docktype = 210
             colCount = 1
             rowCount = 2
             rows {

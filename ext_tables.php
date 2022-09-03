@@ -9,21 +9,18 @@
 
 defined('TYPO3') or die('Access denied.');
 
-(function () {
+(static function () {
     $GLOBALS['TBE_STYLES']['skins']['cpbase']['name'] = 'cpbase';
     $GLOBALS['TBE_STYLES']['skins']['cpbase']['stylesheetDirectories']['cpbase_additional'] = 'EXT:cpbase/Resources/Public/Backend/Css/Skin/';
 
-    // Build or own drop in flyout menu for creating new pages, in the order we prefer
-    $allDoktypesForFlyoutMenu = [
-        \Conpassione\Cpbase\PageConfiguration::DOKTYPE_CONTENTPAGE,
-        \Conpassione\Cpbase\PageConfiguration::DOKTYPE_STARTPAGE,
-        \TYPO3\CMS\Core\Domain\Repository\PageRepository::DOKTYPE_SHORTCUT,
-        \TYPO3\CMS\Core\Domain\Repository\PageRepository::DOKTYPE_LINK,
-        \TYPO3\CMS\Core\Domain\Repository\PageRepository::DOKTYPE_SYSFOLDER,
-    ];
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
-        'options.pageTree.doktypesToShowInNewPageDragArea = ' . implode(',', $allDoktypesForFlyoutMenu)
-    );
+    $cpCustomDoktypes[] = \Conpassione\Cpbase\PageConfiguration::getCpDoktypes();
+
+    foreach ($cpCustomDoktypes as $dokType => $dokTypeValue) {
+        $GLOBALS['PAGES_TYPES'][$dokType] = [
+            'type' => 'web',
+            'allowedTables' => '*'
+        ];
+    }
 
 })();
 

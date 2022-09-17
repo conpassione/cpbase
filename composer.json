@@ -2,9 +2,15 @@
 	"name": "conpassione/cpbase",
 	"description": "conPassione Custom Layout",
 	"type": "typo3-cms-extension",
-	"version": "10.0",
+	"version": "11.0",
 	"keywords": ["TYPO3 CMS", "Custom Layout", "conPassione"],
 	"homepage": "http://www.conpassione.ch",
+	"authors": [
+		{
+			"name": "Renzo Bauen, conPassione gmbh",
+		  	"role": "Developer"
+		}
+	],
 	"license": "GPL-2.0-or-later",
 	"require": {
 		"b13/bolt": "^2.2",
@@ -14,15 +20,34 @@
 		"ichhabrecht/content-defender": "^3.2",
 		"typo3/cms-core": "^11"
 	},
+	"config": {
+		"vendor-dir": ".Build/vendor",
+		"bin-dir": ".Build/bin"
+	},
+	"require-dev": {
+		"typo3/testing-framework": "^7.x.x"
+	},
 	"autoload": {
 		"psr-4": {
 			"Conpassione\\Cpbase\\": "Classes/"
 		}
 	},
+	"autoload-dev": {
+		"psr-4": {
+			"Conpassione\\Cpbase\\Tests\\": "Tests"
+		}
+	},
 	"replace": {
 		"conpasssione/cpbase": "self.version"
 	},
+	"srcipts": {
+		"post-autoload-dump" : [
+			"TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+		]
+	},
 	"extra" : {
+		"branch-alias": {
+			"dev-master": "11.x-dev
 		"typo3/cms": {
 			"extension-key": "cpbase"
 		}

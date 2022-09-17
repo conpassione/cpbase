@@ -79,7 +79,3 @@ foreach ($cpCustomDoktypes as $dokType => $dokTypeValue) {
 ExtensionManagementUtility::addUserTSConfig('options.pageTree.doktypesToShowInNewPageDragArea := addToList(3,4,254)');
 // ExtensionManagementUtility::addUserTSConfig('options.pageTree.doktypesToShowInNewPageDragArea := removeFromList(6,7,199,255)');
 
-// show additional information in page layout header for "Notes of Interest".
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/db_layout.php']['drawHeaderHook'][] = Conpassione\Cpbase\Hooks\PageLayoutHeaderHook::class . '->drawHeader';
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['recordlist/Modules/Recordlist/index.php']['drawHeaderHook'][] = Conpassione\Cpbase\Hooks\PageLayoutHeaderHook::class . '->drawHeader';
-

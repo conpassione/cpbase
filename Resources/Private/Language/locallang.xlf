@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:fluid/Resources/Private/Language/locallang.xlf" date="2022-09-15T23:43:57Z" product-name="conpassione">
+		<body>
+			<trans-unit id="cpbase" resname="cpbase">
+				<source>conPassione base Extension</source>
+			</trans-unit>
+			<trans-unit id="page.doktype.1" resname="page.doktype.1">
+				<source>Contentpage</source>
+			</trans-unit>
+			<trans-unit id="page.doktype.70" resname="page.doktype.70">
+				<source>Startpage</source>
+			</trans-unit>
+			<trans-unit id="page.doktype.71" resname="page.doktype.71">
+				<source>Productpage</source>
+			</trans-unit>
+			<trans-unit id="ceWizard.conpassione1.header" resname="ceWizard.conpassione1.header">
+				<source>conPassione</source>
+			</trans-unit>
+			<trans-unit id="ceWizard.conpassione1.header.title" resname="ceWizard.conpassione1.header.title">
+				<source>New Title</source>
+			</trans-unit>
+			<trans-unit id="ceWizard.conpassione1.header.description" resname="ceWizard.conpassione1.header.description">
+				<source>This is a preformatted Title</source>
+			</trans-unit>
+			<trans-unit id="ceWizard.conpassione1.header.content.header" resname="ceWizard.conpassione1.header.content.header">
+				<source>Enter title text</source>
+			</trans-unit>
+			<trans-unit id="page.backendlayout.content" resname="page.backendlayout.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="page.backendlayout.footer" resname="page.backendlayout.footer">
+				<source>Footer</source>
+			</trans-unit>
+			<trans-unit id="page.backendlayout.product" resname="page.backendlayout.product">
+				<source>Product</source>
+			</trans-unit>
+			<trans-unit id="page.backendlayout.diff" resname="page.backendlayout.diff">
+				<source>Diff</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

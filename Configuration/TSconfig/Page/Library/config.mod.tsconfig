@@ -19,3 +19,24 @@ mod.linkvalidator.linkhandler.reportHiddenRecords = 1
 RTE.default {
 	preset = cpbase
 }
+
+# Content-Elements Wizard configuration
+mod.wizards.newContentElement.wizardItems {
+  conpassione1 {
+    header = LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:ceWizard.conpassione1.header
+    elements {
+      header {
+        iconIdentifier = content-header
+        title = LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:ceWizard.conpassione1.header.title
+        description = LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:ceWizard.conpassione1.header.description
+        tt_content_defValues {
+          CType = header
+          header = LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:ceWizard.conpassione1.header.content.header
+          header_layout = 2
+          header_position = right
+        }
+      }
+    }
+    show = *
+  }
+}

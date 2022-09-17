@@ -18,11 +18,15 @@ namespace Conpassione\Cpbase;
  */
 class PageConfiguration
 {
-    public const DOKTYPE_STARTPAGE = 210;
+    public const DOKTYPE_STARTPAGE = 70;
+    public const DOKTYPE_PRODPAGE = 71;
 
     public static function getCpDoktypes(): array
     {
-        static $cp_dokTypes = [self::DOKTYPE_STARTPAGE => ['Startseite', 'page-start']];
+        static $cp_dokTypes = [
+            self::DOKTYPE_STARTPAGE => ['LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:page.doktype.70', 'page-start'],
+            self::DOKTYPE_PRODPAGE => ['LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:page.doktype.71', 'page-prod']
+        ];
         return $cp_dokTypes;
     }
 }

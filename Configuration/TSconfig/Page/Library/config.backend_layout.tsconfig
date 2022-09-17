@@ -8,7 +8,7 @@ mod {
   web_layout {
     BackendLayouts {
       Contentpage {
-        title = Contentpage(1)
+        title = Inhaltsseite
         config {
           backend_layout {
             doktype = 1
@@ -18,7 +18,7 @@ mod {
               1 {
                 columns {
                   1 {
-                    name = Inhalt
+                    name = LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:page.backendlayout.content
                     colPos = 0
                     #allowed {
                     #  CType = xxx
@@ -30,19 +30,18 @@ mod {
           }
         }
       }
-
       Startpage {
-        title = Startpage(210)
+        title = Startseite
         config {
           backend_layout {
-            docktype = 210
+            doktype = 70
             colCount = 1
             rowCount = 2
             rows {
               1 {
                 columns {
                   1 {
-                    name = Inhalt
+                    name = LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:page.backendlayout.content
                     colPos = 0
                     #allowed {
                     #  CType = xxx
@@ -50,11 +49,41 @@ mod {
                   }
                 }
               }
-
               2 {
                 columns {
                   1 {
-                    name = Fusszeile
+                    name = LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:page.backendlayout.footer
+                    colPos = 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      Productpage {
+        title = Produktseite
+        config {
+          backend_layout {
+            doktype = 71
+            colCount = 1
+            rowCount = 2
+            rows {
+              1 {
+                columns {
+                  1 {
+                    name = LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:page.backendlayout.product
+                    colPos = 0
+                    #allowed {
+                    #  CType = xxx
+                    #}
+                  }
+                }
+              }
+              2 {
+                columns {
+                  1 {
+                    name = LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:page.backendlayout.diff
                     colPos = 1
                   }
                 }

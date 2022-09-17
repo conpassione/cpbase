@@ -4,3 +4,5 @@
 /.ddev
 composer.lock
 .DS_Store
+.Build/
+Build/testing-docker/.env

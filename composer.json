@@ -49,7 +49,9 @@
 		"branch-alias": {
 			"dev-master": "11.x-dev
 		"typo3/cms": {
-			"extension-key": "cpbase"
+			"extension-key": "cpbase",
+			"cms-package-dir": "{$venodr-dir}/typo3/cms",
+			"web-dir": ".Build/Web"
 		}
   }
 }

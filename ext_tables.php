@@ -18,10 +18,7 @@ defined('TYPO3') or die('Access denied.');
     foreach ($cpCustomDoktypes as $dokType => $dokTypeValue) {
         $GLOBALS['PAGES_TYPES'][$dokType] = [
             'type' => 'web',
-            'allowedTables' => '*'
+            'allowedTables' => '*',
         ];
     }
-
 })();
-
-?>

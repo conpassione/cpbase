@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * This file is part of the TYPO3 CMS project.
  *
  * It is free software; you can redistribute it and/or modify it under
@@ -11,7 +11,8 @@
  * LICENSE.txt file that was distributed with this source code.
  *
  * The TYPO3 project - inspiring people to share!
- */
+ **/
+declare(strict_types=1);
 
 namespace Conpassione\Cpbase\DataProcessing;
 
@@ -21,78 +22,9 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException;
 
-/*
- * This data processor will calculate rows, columns and dimensions for a gallery
- * based on several settings and can be used for f.i. the CType "textmedia"
- *
- * The output will be an array which contains the rows and columns,
- * including the file references and the calculated width and height for each media element,
- * but also some more information of the gallery, like position, width and counters
- *
- * Example TypoScript configuration:
- *
- * 10 = TYPO3\CMS\Frontend\DataProcessing\GalleryProcessor
- * 10 {
- *   filesProcessedDataKey = files
- *   mediaOrientation.field = imageorient
- *   numberOfColumns.field = imagecols
- *   equalMediaHeight.field = imageheight
- *   equalMediaWidth.field = imagewidth
- *   columnSpacing = 0
- *   borderEnabled.field = imageborder
- *   borderPadding = 0
- *   borderWidth = 0
- *   maxGalleryWidth = {$styles.content.mediatext.maxW}
- *   maxGalleryWidthInText = {$styles.content.mediatext.maxWInText}
- *   as = gallery
- * }
- *
- * Output example:
- *
- * gallery {
- *   position {
- *     horizontal = center
- *     vertical = above
- *     noWrap = FALSE
- *   }
- *   width = 600
- *   count {
- *     files = 2
- *     columns = 1
- *     rows = 2
- *   }
- *   rows {
- *     1 {
- *       columns {
- *         1 {
- *           media = TYPO3\CMS\Core\Resource\FileReference
- *           dimensions {
- *             width = 600
- *             height = 400
- *           }
- *         }
- *       }
- *     }
- *     2 {
- *       columns {
- *         1 {
- *           media = TYPO3\CMS\Core\Resource\FileReference
- *           dimensions {
- *             width = 600
- *             height = 400
- *           }
- *         }
- *       }
- *     }
- *   }
- *   columnSpacing = 0
- *   border {
- *     enabled = FALSE
- *     width = 0
- *     padding = 0
- *   }
- * }
- */
+/**
+ * Keine Parameter zu beschreiben
+ **/
 class CpGalleryProcessor implements DataProcessorInterface
 {
     /**
@@ -117,17 +49,17 @@ class CpGalleryProcessor implements DataProcessorInterface
     protected array $availableGalleryPositions = [
         'horizontal' => [
             'center' => [0, 8],
+            'left' => [2, 10, 18, 26, 32, 34],
             'right' => [1, 9, 17, 25, 31, 33],
-            'left' => [2, 10, 18, 26, 32, 34]
         ],
         'vertical' => [
             'above' => [0, 1, 2],
-            'intext' => [17, 18],
             'below' => [8, 9, 10],
-            'top' => [25, 26],
+            'bottom' => [33, 34],
+            'intext' => [17, 18],
             'middle' => [31, 32],
-            'bottom' => [33, 34]
-        ]
+            'top' => [25, 26],
+        ],
     ];
 
     /**
@@ -139,7 +71,7 @@ class CpGalleryProcessor implements DataProcessorInterface
         'position' => [
             'horizontal' => '',
             'vertical' => '',
-            'noWrap' => false
+            'noWrap' => false,
         ],
         'width' => 0,
         'count' => [
@@ -153,7 +85,7 @@ class CpGalleryProcessor implements DataProcessorInterface
             'width' => 0,
             'padding' => 0,
         ],
-        'rows' => []
+        'rows' => [],
     ];
 
     /**
@@ -228,13 +160,13 @@ class CpGalleryProcessor implements DataProcessorInterface
     /**
      * Process data for a gallery, for instance the CType "textmedia"
      *
-     * @param ContentObjectRenderer $cObj The content object renderer, which contains data of the content element
-     * @param array $contentObjectConfiguration The configuration of Content Object
-     * @param array $processorConfiguration The configuration of this processor
-     * @param array $processedData Key/value store of processed data (e.g. to be passed to a Fluid View)
-     * @return array the processed data as key/value store
+     * @param  ContentObjectRenderer $cObj                       The content object renderer, which contains data of the content element the configuration of Content Object
+     * @param  array                 $contentObjectConfiguration The configuration of this processor
+     * @param  array                 $processorConfiguration     Key/value store of processed data (e.g. to be passed to a Fluid View)
+     * @param  array                 $processedData              the processed data as key/value store
+     * @return array
      * @throws ContentRenderingException
-     */
+     **/
     public function process(
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
@@ -295,10 +227,10 @@ class CpGalleryProcessor implements DataProcessorInterface
      * Get configuration value from processorConfiguration
      * with when $dataArrayKey fallback to value from cObj->data array
      *
-     * @param string $key
-     * @param string|null $dataArrayKey
+     * @param  string      $key
+     * @param  string|null $dataArrayKey
      * @return string
-     */
+     **/
     protected function getConfigurationValue(string $key, string $dataArrayKey = null): string
     {
         $defaultValue = '';
@@ -318,7 +250,7 @@ class CpGalleryProcessor implements DataProcessorInterface
      * Gallery has a horizontal and a vertical position towards the text
      * and a possible wrapping of the text around the gallery.
      */
-    protected function determineGalleryPosition() : void
+    protected function determineGalleryPosition(): void
     {
         foreach ($this->availableGalleryPositions as $positionDirectionKey => $positionDirectionValue) {
             foreach ($positionDirectionValue as $positionKey => $positionArray) {
@@ -336,7 +268,7 @@ class CpGalleryProcessor implements DataProcessorInterface
     /**
      * Get the gallery width based on vertical position
      */
-    protected function determineMaximumGalleryWidth() :void
+    protected function determineMaximumGalleryWidth(): void
     {
         if ($this->galleryData['position']['vertical'] === 'intext') {
             $this->galleryData['width'] = $this->maxGalleryWidthInText;
@@ -348,9 +280,8 @@ class CpGalleryProcessor implements DataProcessorInterface
     /**
      * Calculate the amount of rows and columns
      */
-    protected function calculateRowsAndColumns() :void
+    protected function calculateRowsAndColumns(): void
     {
-
         // If no columns defined, set it to 1
         $columns = max($this->numberOfColumns, 1);
 
@@ -378,7 +309,7 @@ class CpGalleryProcessor implements DataProcessorInterface
      *
      * File objects MUST already be filtered. They need a height and width to be shown in the gallery
      */
-    protected function calculateMediaWidthsAndHeights() : void
+    protected function calculateMediaWidthsAndHeights(): void
     {
         $columnSpacingTotal = ($this->galleryData['count']['columns'] - 1) * $this->columnSpacing;
 
@@ -419,7 +350,7 @@ class CpGalleryProcessor implements DataProcessorInterface
                 );
                 $this->mediaDimensions[$key] = [
                     'width' => $mediaWidth,
-                    'height' => $mediaHeight
+                    'height' => $mediaHeight,
                 ];
             }
 
@@ -443,7 +374,7 @@ class CpGalleryProcessor implements DataProcessorInterface
                 );
                 $this->mediaDimensions[$key] = [
                     'width' => $mediaWidth,
-                    'height' => $mediaHeight
+                    'height' => $mediaHeight,
                 ];
             }
 
@@ -461,7 +392,7 @@ class CpGalleryProcessor implements DataProcessorInterface
                 );
                 $this->mediaDimensions[$key] = [
                     'width' => $mediaWidth,
-                    'height' => $mediaHeight
+                    'height' => $mediaHeight,
                 ];
             }
         }
@@ -472,14 +403,14 @@ class CpGalleryProcessor implements DataProcessorInterface
      * a possible cropping needs to be taken into account.
      *
      * @param FileInterface $fileObject
-     * @param string $dimensionalProperty 'width' or 'height'
+     * @param string        $dimensionalProperty 'width' or 'height'
      *
      * @return int
      */
-    protected function getCroppedDimensionalProperty(FileInterface $fileObject, string $dimensionalProperty) : int
+    protected function getCroppedDimensionalProperty(FileInterface $fileObject, string $dimensionalProperty): int
     {
         if (!$fileObject->hasProperty('crop') || empty($fileObject->getProperty('crop'))) {
-            return $fileObject->getProperty($dimensionalProperty);
+            return (int)$fileObject->getProperty($dimensionalProperty);
         }
 
         $croppingConfiguration = $fileObject->getProperty('crop');
@@ -492,7 +423,7 @@ class CpGalleryProcessor implements DataProcessorInterface
      *
      * Make an array for rows, columns and configuration
      */
-    protected function prepareGalleryData() : void
+    protected function prepareGalleryData(): void
     {
         for ($row = 1; $row <= $this->galleryData['count']['rows']; $row++) {
             for ($column = 1; $column <= $this->galleryData['count']['columns']; $column++) {
@@ -502,8 +433,8 @@ class CpGalleryProcessor implements DataProcessorInterface
                     'media' => $this->fileObjects[$fileKey] ?? null,
                     'dimensions' => [
                         'width' => $this->mediaDimensions[$fileKey]['width'] ?? null,
-                        'height' => $this->mediaDimensions[$fileKey]['height'] ?? null
-                    ]
+                        'height' => $this->mediaDimensions[$fileKey]['height'] ?? null,
+                    ],
                 ];
             }
         }

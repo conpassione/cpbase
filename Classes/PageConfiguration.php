@@ -1,5 +1,10 @@
 <?php
 
+/**
+ *  Diese Datei enthält die Konstanten für die neuen Seiten
+ *  (c) by conPassione gmbh
+ **/
+
 declare(strict_types=1);
 
 namespace Conpassione\Cpbase;
@@ -25,7 +30,7 @@ class PageConfiguration
     {
         static $cp_dokTypes = [
             self::DOKTYPE_STARTPAGE => ['LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:page.doktype.70', 'page-start'],
-            self::DOKTYPE_PRODPAGE => ['LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:page.doktype.71', 'page-prod']
+            self::DOKTYPE_PRODPAGE => ['LLL:EXT:cpbase/Resources/Private/Language/locallang.xlf:page.doktype.71', 'page-prod'],
         ];
         return $cp_dokTypes;
     }

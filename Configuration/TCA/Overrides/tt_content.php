@@ -1,15 +1,16 @@
 <?php
-/*--------------------------------------------------------------
+/**
+ * --------------------------------------------------------------
  * Extension general config file for ext "cp_base".
  *
  * Generated 01.06.2020
- *--------------------------------------------------------------
- */
+ * --------------------------------------------------------------
+ **/
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 if (!defined('TYPO3_MODE')) {
-    die ('Access denied.');
+    die('Access denied.');
 }
 
 GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
@@ -20,19 +21,19 @@ GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureConta
         'Some Description of the Container', // description
         [
             [
-                ['name' => 'header', 'colPos' => 200, 'colspan' => 2, 'allowed' => ['CType' => 'header, textmedia, b13-2cols'], 'maxitems' => 1]
+                ['name' => 'header', 'colPos' => 200, 'colspan' => 2, 'allowed' => ['CType' => 'header, textmedia, b13-2cols'], 'maxitems' => 1],
             ],
             [
                 ['name' => 'left side', 'colPos' => 201],
-                ['name' => 'right side', 'colPos' => 202, 'maxitems' => 1]
-            ]
+                ['name' => 'right side', 'colPos' => 202, 'maxitems' => 1],
+            ],
         ] // grid configuration
     )
     )
         // override default configurations
         ->setIcon('EXT:container_example/Resources/Public/Icons/b13-2cols-with-header-container.svg')
         ->setSaveAndCloseInNewContentElementWizard(false)
- );
+);
 
 // override default settings
 $GLOBALS['TCA']['tt_content']['types']['b13-2cols-with-header-container']['showitem'] = 'sys_language_uid,CType,header,tx_container_parent,colPos';
@@ -47,8 +48,8 @@ GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureConta
         [
             [
                 ['name' => '2-cols-left', 'colPos' => 200],
-                ['name' => '2-cols-right', 'colPos' => 201]
-            ]
+                ['name' => '2-cols-right', 'colPos' => 201],
+            ],
         ] // grid configuration
     )
     )

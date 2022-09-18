@@ -1,9 +1,14 @@
 <?php
 
+/**
+ * Diese Datei enthält ide Definitionen für die neuen Seitentypen
+ * (c) by conPassione gmbh
+ **/
+
 use Conpassione\Cpbase\PageConfiguration;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Domain\Repository\PageRepository;
+use TYPO3\CMS\Core\Utility\ArrayUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 $GLOBALS['TCA']['pages']['columns']['doktype']['config']['items'][1][0] = 'Inhaltsseite';
 
@@ -18,7 +23,7 @@ foreach ($cpCustomDoktypes as $dokType => $dokTypeValue) {
             $dokTypeValue[0],
             $dokType,
             'apps-pagetree-' . $dokTypeValue[1] . '-default',
-            'default'
+            'default',
         ],
         '1',
         'after'
@@ -33,14 +38,13 @@ foreach ($cpCustomDoktypes as $dokType => $dokTypeValue) {
                     $dokType . '-contentFromPid' => 'apps-pagetree-' . $dokTypeValue[1] . '-default',
                     $dokType . '-root' => 'apps-pagetree-' . $dokTypeValue[1] . '-root',
                     $dokType . '-hideinmenu' => 'apps-pagetree-' . $dokTypeValue[1] . '-hideinmenu',
-                ]
+                ],
             ],
             'types' => [
                 $dokType => [
-                    'showitem' => $GLOBALS['TCA']['pages']['types'][PageRepository::DOKTYPE_DEFAULT]['showitem']
-                ]
-            ]
-        ]
+                    'showitem' => $GLOBALS['TCA']['pages']['types'][PageRepository::DOKTYPE_DEFAULT]['showitem'],
+                ],
+            ],
+        ],
     );
 }
-

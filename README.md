@@ -1,2 +1,2 @@
 # cpbase
-TYPO3 Extension as a base for all Websites built by conPassione gmbh 
+TYPO3 Extension as a base for all TYPO3 Current Version Websites built by conPassione gmbh 
